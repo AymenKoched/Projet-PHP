@@ -1,0 +1,152 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body{
+  margin: 20px 40px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: #fafafa;
+}
+h1, h2, h3, h4 , h5, ul, li, a, p, input, label, button, div, footer{
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #444;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 120px;
+}
+nav ul{
+  display: flex;
+  align-items: center;
+}
+nav li{
+  margin-left: 20px;
+}
+nav li a{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+}
+.btn{
+  border-radius: 36px;
+  background: #FEE996;
+}
+form h2{
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+form{
+  width: 360px;
+  margin: 50px auto;
+  padding: 30px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: white;
+  padding-right: 55px;
+}
+input,textarea{
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  width: 100%;
+}
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+button{
+  margin-top: 30px;
+  border-radius: 36px;
+  background: #FEE996;
+  border:0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.recipes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 80px;
+  margin: 80PX AUTO;
+  max-width: 1200px;
+}
+.recipe{
+  display: inline-block;
+  border-radius: 20px;
+  background: white;
+  position: relative;
+  text-align: center;
+  padding: 0 20px 30px 20px
+}
+.recipe img {
+  max-width: 100%;
+  margin: 20px auto 20px;
+  display: block;
+}
+
+footer{
+  text-align: center;
+  margin-top: 120px;
+  color: #aaa;
+}
+
+.details {
+  margin: 10px;
+  padding: 10px;
+}
+.details h2{
+  margin-bottom: 20px;
+}
+
+.details h5{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.details p{
+  margin: 0;
+}
+.details img {
+  margin-top: 20px;
+}
+
+.details  .ingrediants{
+  list-style-type: circle;
+}
+
+.details .etapes{
+list-style-type: decimal;
+}
+
+.details li {
+  margin-bottom: 5px;
+}
+
+.delete {
+  background-color: darkred;
+}
+
+.delete a {
+  color: #fafafa;
+}
