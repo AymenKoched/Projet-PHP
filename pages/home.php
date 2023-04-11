@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes | Home </title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="favicon.ico">
-</head>
-
-<body>
-<nav>
-    <h1><a href="home.php">Cooking Recipes Collection</a></h1>
-    <ul>
-        <li>Welcome, foulen@google.com</li>
-        <li><a href="addRecipe.php">Add a Recipe</a></li>
-        <li><a href="logout.php">Log out</a></li>
-    </ul>
-</nav>
+<?php
+$pageTitle = 'Recipes | Home';
+include 'fragments/header.php';
+?>
 
 <ul class="recipes">
     <a href="details.php">
@@ -39,9 +24,10 @@
         <h4>Kamounia</h4>
         <p>By Ala</p>
     </li></a>
+
 </ul>
 
-<footer>Copyright &copy; Team 2023</footer>
+<?php
+include 'fragments/footer.php';
+?>
 
-</body>
-</html>

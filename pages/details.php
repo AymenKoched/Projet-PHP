@@ -1,26 +1,8 @@
 <?php
-$user = "aymen";
+$pageTitle = 'Recipes | Details';
+include 'fragments/header.php';
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes | Recipe </title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="favicon.ico">
-</head>
-
-<body>
-<nav>
-    <h1><a href="home.php">Cooking Recipes Collection</a></h1>
-    <ul>
-        <li>Welcome, foulen@google.com</li>
-        <li><a href="addRecipe.php">Add a Recipe</a></li>
-        <li><a href="logout.php">Log out</a></li>
-    </ul>
-</nav>
 
 <div class="details">
     <h2>Makarouna bel djej</h2>
@@ -53,17 +35,10 @@ $user = "aymen";
     </ul>
 
 </div>
+<button><a href="update.php">Update</a></button>
+<button class="delete"><a href="delete.php" >Delete</a></button>
 
 <?php
-if($user == "aymen"){
-    echo     '<button><a href="update.php">Update</a></button>';
-    echo     '<button class="delete"><a href="delete.php" >Delete</a></button>';
-}
+include 'fragments/footer.php';
 ?>
-
-
-<footer>Copyright &copy; Team 2023</footer>
-
-</body>
-</html>
 

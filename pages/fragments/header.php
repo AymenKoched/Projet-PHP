@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes | Login</title>
+    <title><?php if(isset($pageTitle)){echo $pageTitle;} else {echo 'Home';}?> </title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
@@ -12,20 +12,9 @@
 <body>
 <nav>
     <h1><a href="home.php">Cooking Recipes Collection</a></h1>
+    <ul>
+        <li>Welcome, Admin</li>
+        <li><a href="addRecipe.php">Add a Recipe</a></li>
+        <li><a href="logout.php">Log out</a></li>
+    </ul>
 </nav>
-
-<form action="">
-    <h2>Log in</h2>
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" required />
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required />
-    <button type="submit">Log in</button>
-</form>
-
-
-
-<?php
-include 'fragments/footer.php';
-?>
-

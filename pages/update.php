@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipes | Update Recipe </title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="icon" href="favicon.ico">
-</head>
-
-<body>
-<nav>
-    <h1><a href="home.php">Cooking Recipes Collection</a></h1>
-    <ul>
-        <li>Welcome, foulen@google.com</li>
-        <li><a href="addRecipe.php">Add a Recipe</a></li>
-        <li><a href="logout.php">Log out</a></li>
-    </ul>
-</nav>
+<?php
+$pageTitle = 'Recipes | Update-Recipe';
+include 'fragments/header.php';
+?>
 
 <form action="">
     <h2>Update Recipe</h2>
@@ -35,7 +20,7 @@
 </form>
 
 
-<footer>Copyright &copy; Team 2023</footer>
+<?php
+include 'fragments/footer.php';
+?>
 
-</body>
-</html>
