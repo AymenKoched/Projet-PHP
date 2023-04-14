@@ -6,7 +6,7 @@ include 'fragments/header.php';
 
 <div class="details">
     <h2>Makarouna bel djej</h2>
-    <img src="recipe1.jpeg" alt="recipe img">
+    <img src="uploads/recipe1.jpeg" alt="recipe img">
     <p>By Aymen</p>
 
     <h5>Ingrédients:</h5>

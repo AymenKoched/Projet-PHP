@@ -4,7 +4,7 @@ include 'fragments/header.php';
 ?>
 
 
-<form action="ajouterRecipe.php" method="post" enctype="multipart/form-data">
+<form action="upload.php" method="post" enctype="multipart/form-data">
     <h2>Add Recipe</h2>
 
     <label for="title">Nom</label>
@@ -20,7 +20,7 @@ include 'fragments/header.php';
     <textarea id="etapes" name="etapes"></textarea>
 
     <label for="image">Image</label>
-    <input id="image" class="form-control" type="file" name="image" required>
+    <input id="image" class="form-control" type="file" name="my_image" required>
 
     <label for="rating">Rating</label>
     <input id="rating" class="form-control" type="number" name="rating">
@@ -36,6 +36,8 @@ include 'fragments/header.php';
     </select>
 
     <button type="submit">Create</button>
+    <input type="hidden" name="recipe_added" value="1">
+
 </form>
 
 
