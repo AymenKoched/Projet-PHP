@@ -58,7 +58,7 @@ form{
   background: white;
   padding-right: 55px;
 }
-input,textarea{
+input,textarea,select{
   padding: 10px 12px;
   border-radius: 4px;
   border: 1px solid #ddd;

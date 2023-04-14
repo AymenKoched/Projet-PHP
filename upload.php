@@ -2,7 +2,6 @@
 
 require_once('ConnexionPDO.php');
 
-if (isset($_POST['recipe_added'])) {
 
     $nom = $_POST['nom'];
     $author = $_POST['author'];
@@ -14,7 +13,7 @@ if (isset($_POST['recipe_added'])) {
     $target_file = $target_dir . basename($_FILES["my_image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     move_uploaded_file($_FILES["my_image"]["tmp_name"], $target_file);
-    $query = "INSERT INTO recipes (nom, author, image, ingrediant, etape, rating, categorie)
+    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie)
             VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);
@@ -26,11 +25,7 @@ if (isset($_POST['recipe_added'])) {
     $statement->bindParam(':rating', $rating);
     $statement->bindParam(':categorie', $categorie);
     $statement->execute();
-    header("Location: home.php?success=1");
-    exit();
-} else {
-    // Redirect to addRecipe.php if form was not submitted
-    header("Location: AddRecipe.php");
-    exit();
-}
-?>
+    header("Location: home.php");
+
+
+

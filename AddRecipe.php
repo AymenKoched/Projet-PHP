@@ -20,13 +20,13 @@ include 'fragments/header.php';
     <textarea id="etapes" name="etapes"></textarea>
 
     <label for="image">Image</label>
-    <input id="image" class="form-control" type="file" name="my_image" required>
+    <input id="image" type="file" name="my_image" required>
 
     <label for="rating">Rating</label>
-    <input id="rating" class="form-control" type="number" name="rating">
+    <input id="rating"  type="number" name="rating" required>
 
     <label for="categories">Categories</label>
-    <select id="categories" name="categories" class="form-select" aria-label="Default select example">
+    <select id="categories" name="categories" required>
         <option selected>Open this select menu</option>
         <option value="Tounsia">Tounsia</option>
         <option value="Arbia">Arbia</option>
@@ -36,7 +36,6 @@ include 'fragments/header.php';
     </select>
 
     <button type="submit">Create</button>
-    <input type="hidden" name="recipe_added" value="1">
 
 </form>
 

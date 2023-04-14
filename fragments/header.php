@@ -15,6 +15,8 @@
     <ul>
         <li>Welcome, Admin</li>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
+        <li><a href="../about.php">About</a></li>
+        <li><a href="../contact.php">Contact</a></li>
         <li><a href="logout.php">Log out</a></li>
     </ul>
 </nav>

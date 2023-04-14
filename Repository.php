@@ -63,7 +63,4 @@ abstract class Repository
 
         return $reponse->fetch(PDO::FETCH_OBJ);
     }
-
-
-
 }

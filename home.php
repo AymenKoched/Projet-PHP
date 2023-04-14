@@ -29,7 +29,13 @@ include 'fragments/header.php';
     require_once ('RecipesRepository.php');
     $rep= new RecipesRepository("recipes");
     $recipes = $rep->findAll();
+
+    if(!$recipes){
+        echo "<div>No Recipes to display ..</div>";
+    }
+
     ?>
+
     <ul class="recipes">
     <?php
         foreach ($recipes as $recipe) {
@@ -37,16 +43,17 @@ include 'fragments/header.php';
         $author=$recipe->author;
         $image=$recipe->image;
         $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
-        echo '<a href="details.php">'.
-         '<li class="recipe">'.
-            '<img src="' . $dataUri .'" height ="300" width="300" '. '" alt="recipe img">'.
-         '<h4>' . $nom . '<h4>'.
-         '<p>By ' . $author . '</p>'.
-         '</li></a>';
-    }
-    ?>
-
+        ?>
+            <a href="details.php?id=<?= $recipe->id;?>">
+            <li class="recipe">
+                <img src="<?=$dataUri?>" height ="300" width="300" alt="recipe img">
+                <h4><?= $nom?><h4>
+                <p><?=$author?></p>
+            </li>
+            </a>
+    <?php } ?>
     </ul>
+
 <?php
 include 'fragments/footer.php';
 ?>
