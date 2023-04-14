@@ -17,6 +17,6 @@
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../about.php">About</a></li>
         <li><a href="../contact.php">Contact</a></li>
-        <li><a href="logout.php">Log out</a></li>
+        <li><a href="logout.php" class="btn">Log out</a></li>
     </ul>
 </nav>
