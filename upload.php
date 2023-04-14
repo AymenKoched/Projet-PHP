@@ -26,7 +26,7 @@ if (isset($_POST['recipe_added'])) {
     $statement->bindParam(':rating', $rating);
     $statement->bindParam(':categorie', $categorie);
     $statement->execute();
-    header("Location: home.php");
+    header("Location: home.php?success=1");
     exit();
 } else {
     // Redirect to addRecipe.php if form was not submitted
