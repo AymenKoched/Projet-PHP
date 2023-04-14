@@ -1,0 +1,65 @@
+.details h2 {
+    text-align: center !important;
+    padding: 30px;
+}
+.details .img ,.btns ,.ingredients{
+    display: flex;
+    justify-content: center;
+}
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+.ingredients ul li {
+    text-align: center;
+}
+.by{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 35px;
+}
+.btns{
+    margin: 50px;
+    column-gap: 20px;
+}
+.details .img .inside-img{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 25px 1px gray;
+    width: 550px;
+    height:fit-content;
+}
+.details .img .inside-img img{
+    width: 100%;
+}
+.scrollspy-example{
+    height:300px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+.row{
+    background-color: white;
+}
+.col-8{
+    padding-bottom:10px;
+    padding-top: 10px;
+    border:1px solid #d3d3d3;
+    border-radius: 5px;
+}
+.btn-danger a , .btn-primary a{
+    color: white !important;
+    font-size: 20px;
+    padding: 10px;
+}
+.details h5 {
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.fa-heart{
+    font-size: 20px;
+    padding-left: 20px;
+    font-weight: 700;
+}
