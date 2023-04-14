@@ -23,4 +23,4 @@ require_once ('RecipesRepository.php');
 $rep= new RecipesRepository("recipes");
 $recipe = $rep->UpdateById($id,$params);
 
-header("Location: home.php");
+header("Location: index.php");

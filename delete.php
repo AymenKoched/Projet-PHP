@@ -6,4 +6,4 @@ require_once ('RecipesRepository.php');
 $rep= new RecipesRepository("recipes");
 $recipe = $rep->DeleteById($id);
 
-header('location:home.php');
+header('location:index.php');
