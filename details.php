@@ -52,40 +52,35 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 <div class="details">
     <h2><?= $recipe->nom ?></h2>
     <img src="<?=$dataUri?>" alt="recipe img">
-    <p><?= $recipe->author?></p>
+    <p> <?= $recipe->author?></p>
 
     <h5>Ingrédients:</h5>
-    <ul class="ingrediants" >
+    <ul class="ingrediants">
         <?php
         $ingrediants = explode('-', $recipe->ingrediants);
         $ingrediants = array_map('trim', $ingrediants);
         foreach ($ingrediants as $element){
+            if ($element != "")
             echo "<li>$element</li>";
         }
         ?>
     </ul>
-
-
     <h5>Etapes:</h5>
     <ul class="etapes">
         <?php
         $etapes = explode('-', $recipe->etapes);
         $etapes = array_map('trim', $etapes);
         foreach ($etapes as $etape){
+            if ($etape !="" )
             echo "<li>$etape</li>";
         }
         ?>
     </ul>
-
     <h5>Categorie: <?= $recipe->categorie ?></h5>
-
     <h5>Rating: <?= $recipe->rating?></h5>
-
 </div>
-
 <button><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
 <button class="delete"><a href="delete.php?id=<?= $recipe->id;?>" >Delete</a></button>
-
 <?php
 include 'fragments/footer.php';
 ?>

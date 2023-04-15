@@ -2,40 +2,17 @@
 $pageTitle = 'Recipes | Index';
 include 'fragments/header.php';
 ?>
-
-<!--<ul class="recipes">-->
-<!--    <a href="details.php">-->
-<!--    <li class="recipe">-->
-<!--        <img src="uploads/recipe1.jpeg" alt="recipe img">-->
-<!--        <h4>Makarouna bel djej</h4>-->
-<!--        <p>By Aymen</p>-->
-<!--    </li></a>-->
-<!---->
-<!--    <a href="details.php">-->
-<!--    <li class="recipe">-->
-<!--        <img src="uploads/recipe2.jpeg" alt="recipe img">-->
-<!--        <h4>Koskssi bl l7am </h4>-->
-<!--        <p>By Hbib</p>-->
-<!--    </li></a>-->
-<!---->
-<!--    <a href="details.php">-->
-<!--    <li class="recipe">-->
-<!--        <img src="uploads/recipe3.jpg" alt="recipe img">-->
-<!--        <h4>Kamounia</h4>-->
-<!--        <p>By Ala</p>-->
-<!--    </li></a>-->
-
+    <?php if(isset($_GET["welcome"])) { ?>
+        <div style="text-align: center"><strong>Welcome, <?=$_GET["welcome"]?></strong></div>
+    <?php } ?>
     <?php
     require_once ('RecipesRepository.php');
     $rep= new RecipesRepository("recipes");
     $recipes = $rep->findAll();
-
     if(!$recipes){
         echo "<div>No Recipes to display ..</div>";
     }
-
     ?>
-
     <ul class="recipes">
     <?php
         foreach ($recipes as $recipe) {
@@ -53,7 +30,6 @@ include 'fragments/header.php';
             </a>
     <?php } ?>
     </ul>
-
 <?php
 include 'fragments/footer.php';
 ?>

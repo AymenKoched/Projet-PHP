@@ -25,6 +25,14 @@ abstract class Repository
         return $reponse->fetch(PDO::FETCH_OBJ);
     }
 
+
+    public function findByEmail($email){
+        $requete = "select * from $this->tableName where email = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$email]);
+        return $reponse->fetch(PDO::FETCH_OBJ);
+    }
+
     public function Create ($params){
         $keys = array_keys($params);
         // ['id' , 'nom' , 'prenom' , 'age']
@@ -50,17 +58,13 @@ abstract class Repository
     public function UpdateById($id,$params){
         $keys = array_keys($params);
         $setClause = implode('=?, ', $keys) . '=?';
-
-        $requete = "UPDATE $this->tableName
-                SET $setClause
-                WHERE id = ?";
-
+        $requete = "UPDATE $this->tableName SET $setClause WHERE id = ?";
         $values = array_values($params);
         $values[] = $id;
-
         $reponse = $this->cnxPDO->prepare($requete);
         $reponse->execute($values);
-
         return $reponse->fetch(PDO::FETCH_OBJ);
     }
+
+
 }
