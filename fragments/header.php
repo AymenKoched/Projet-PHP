@@ -10,6 +10,7 @@ session_start();
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
+    <script defer src="https://kit.fontawesome.com/79198b1732.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@ session_start();
         <li><a href="../contact.php">Contact</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
         <li><a href="logout.php" class="btn">Log out</a></li>
+
         <?php }  else { ?>
             <li><a href="login.php" class="btn">Log In</a></li>
         <?php  } ?>
