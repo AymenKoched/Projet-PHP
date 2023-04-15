@@ -36,6 +36,7 @@ include 'fragments/header.php';
     </select>
 
     <button type="submit">Create</button>
+    <input type="hidden" name="recipe_added" value="1">
 
 </form>
 
