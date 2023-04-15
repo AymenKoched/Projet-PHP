@@ -1,4 +1,3 @@
-
 <?php
 $pageTitle = 'Recipes | Details';
 include 'fragments/header.php';
@@ -27,7 +26,7 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
         <li>4 morceaux de poulet</li>
         <li>3 cs de concentré de tomates</li>
         <li>1 cs de piment moulu</li>
-        <li>1 cc de curcuma</li>
+        <li>1 cc de curcuma</>
         <li>1 cs rase de tabel karouia</li>
         <li>8 gousses d'ail</li>
         <li>4 piments</li>
@@ -52,7 +51,7 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 <div class="details">
     <h2><?= $recipe->nom ?></h2>
     <img src="<?=$dataUri?>" alt="recipe img">
-    <p> <?= $recipe->author?></p>
+    <p>By <?= $recipe->author?></p>
 
     <h5>Ingrédients:</h5>
     <ul class="ingrediants">
@@ -79,8 +78,17 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
     <h5>Categorie: <?= $recipe->categorie ?></h5>
     <h5>Rating: <?= $recipe->rating?></h5>
 </div>
-<button><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
-<button class="delete"><a href="delete.php?id=<?= $recipe->id;?>" >Delete</a></button>
+
+<?php
+if(isset($_SESSION['name'])){
+    if($_SESSION['name'] === $recipe->author){ ?>
+        <button><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
+        <button class="delete"><a href="delete.php?id=<?= $recipe->id;?>">Delete</a></button>
+<?php
+    }
+}
+?>
+
 <?php
 include 'fragments/footer.php';
 ?>

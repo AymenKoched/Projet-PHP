@@ -13,5 +13,5 @@ if($user){
     $UserRepository->Create(['email' => $email,'pwd'=>$pwd,'name'=>$name]);
     $_SESSION["user"] = $email;
     $_SESSION["name"] = $name;
-    header("location:index.php?welcome=$name");
+    header("location:index.php");
 }
