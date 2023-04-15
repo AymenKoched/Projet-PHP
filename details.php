@@ -59,6 +59,7 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
         $ingrediants = explode('-', $recipe->ingrediants);
         $ingrediants = array_map('trim', $ingrediants);
         foreach ($ingrediants as $element){
+            if ($element != "")
             echo "<li>$element</li>";
         }
         ?>
@@ -71,6 +72,7 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
         $etapes = explode('-', $recipe->etapes);
         $etapes = array_map('trim', $etapes);
         foreach ($etapes as $etape){
+            if ($etape !="" )
             echo "<li>$etape</li>";
         }
         ?>
