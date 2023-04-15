@@ -2,7 +2,6 @@
 $pageTitle = 'Recipes | Index';
 include 'fragments/header.php';
 ?>
-
     <?php if(isset($_GET["welcome"])) { ?>
         <div style="text-align: center"><strong>Welcome, <?=$_GET["welcome"]?></strong></div>
     <?php } ?>
@@ -31,7 +30,6 @@ include 'fragments/header.php';
             </a>
     <?php } ?>
     </ul>
-
 <?php
 include 'fragments/footer.php';
 ?>

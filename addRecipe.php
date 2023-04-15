@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Recipes | Add-Recipe';
 include 'fragments/header.php';
+include 'isAuthenticated.php';
 ?>
 
 
@@ -11,7 +12,7 @@ include 'fragments/header.php';
     <input type="text" name="nom" id="title" required />
 
     <label for="author">Author</label>
-    <input type="text" name="author" id="author" required />
+    <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
 
     <label for="ingredients">Ingrédients (separate with '-')</label>
     <textarea id="ingredients" name="ingredients"></textarea>
