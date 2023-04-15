@@ -1,10 +1,9 @@
 <?php
-$pageTitle = 'Recipes | Index';
+$pageTitle = 'Recipes | Home';
 include 'fragments/header.php';
 ?>
-    <?php if(isset($_GET["welcome"])) { ?>
-        <div style="text-align: center"><strong>Welcome, <?=$_GET["welcome"]?></strong></div>
-    <?php } ?>
+
+
     <?php
     require_once ('RecipesRepository.php');
     $rep= new RecipesRepository("recipes");
@@ -25,11 +24,12 @@ include 'fragments/header.php';
             <li class="recipe">
                 <img src="<?=$dataUri?>" height ="300" width="300" alt="recipe img">
                 <h4><?= $nom?><h4>
-                <p><?=$author?></p>
+                <p>By <?=$author?></p>
             </li>
             </a>
     <?php } ?>
     </ul>
+
 <?php
 include 'fragments/footer.php';
 ?>

@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Recipes | Add-Recipe';
 include 'fragments/header.php';
-include 'isAuthenticated.php';
+include 'requireAuthenticated.php';
 ?>
 
 

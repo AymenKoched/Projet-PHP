@@ -1,7 +1,5 @@
 <?php
 
-var_dump($_POST);
-
 $id = htmlentities($_POST['id']);
 $nom = htmlentities($_POST['nom']);
 $author = htmlentities($_POST['author']);

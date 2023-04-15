@@ -18,7 +18,7 @@ session_start();
     <ul>
         <!-- we can add hover effect -->
         <?php if(isset($_SESSION["name"])) { ?>
-        <li> <?= $_SESSION["name"] ?></li>
+        <li>Welcome, <?= $_SESSION["name"] ?></li>
         <?php } ?>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../about.php">About</a></li>
@@ -26,6 +26,7 @@ session_start();
         <?php  if(isset($_SESSION["user"])) {?>
         <li><a href="logout.php" class="btn">Log out</a></li>
         <?php }  else { ?>
+            <li><a href="signUp.php" class="btn">Sign Up</a></li>
             <li><a href="login.php" class="btn">Log In</a></li>
         <?php  } ?>
     </ul>

@@ -28,10 +28,7 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
 
     <label for="image">Image</label>
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
-    <div>
-        <label class="custom-file-upload" for="image-upload">Choose file</label>
-        <input id="image-upload" type="file" name="my_image" required>
-    </div>
+    <input id="image-upload" type="file" name="my_image" value="<?=$DataUri?>" required>
     <small class="form-text text-muted">Choose a JPG, JPEG or PNG image under 5 MB.</small>
 
     <label for="rating">Rating</label>

@@ -150,21 +150,4 @@ list-style-type: decimal;
 .delete a {
   color: #fafafa;
 }
-input[type="file"] {
-  display: none;
-}
-label.custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  background-color: #fee996;
-  color: #000000;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-}
 
-label.custom-file-upload:hover {
-  background-color: #fee996;
-}

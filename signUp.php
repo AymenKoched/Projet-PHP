@@ -1,5 +1,8 @@
 <?php
 include_once 'fragments/header.php';
+
+
+include 'requireGuest.php';
 ?>
 <form action="signupProcess.php" method="post">
     <label for="name">Display Name</label>
@@ -9,6 +12,7 @@ include_once 'fragments/header.php';
     <label for="password">Password</label>
     <input type="password" name="password" id="password" required/>
     <button type="submit">Sign Up</button>
+    <br>
     <?php if(isset($_GET["erreur"])) { ?>
     <div class="alert alert-danger" role="alert">
         <?= $_GET["erreur"]?>
