@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +16,17 @@
 <nav>
     <h1><a href="index.php">Cooking Recipes Collection</a></h1>
     <ul>
-        <li>Welcome, Admin</li>
+        <!-- we can add hover effect -->
+        <?php if(isset($_SESSION["name"])) { ?>
+        <li> <?= $_SESSION["name"] ?></li>
+        <?php } ?>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../about.php">About</a></li>
         <li><a href="../contact.php">Contact</a></li>
+        <?php  if(isset($_SESSION["user"])) {?>
         <li><a href="logout.php" class="btn">Log out</a></li>
+        <?php }  else { ?>
+            <li><a href="login.php" class="btn">Log In</a></li>
+        <?php  } ?>
     </ul>
 </nav>
