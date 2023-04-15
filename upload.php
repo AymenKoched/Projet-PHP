@@ -25,7 +25,7 @@ require_once('ConnexionPDO.php');
     $statement->bindParam(':rating', $rating);
     $statement->bindParam(':categorie', $categorie);
     $statement->execute();
-    header("Location: home.php");
+    header("Location: index.php");
 
 
 

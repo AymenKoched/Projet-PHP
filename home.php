@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Recipes | Home';
+$pageTitle = 'Recipes | Index';
 include 'fragments/header.php';
 ?>
 
