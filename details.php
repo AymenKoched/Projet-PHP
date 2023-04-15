@@ -1,3 +1,4 @@
+
 <?php
 $pageTitle = 'Recipes | Details';
 include 'fragments/header.php';
