@@ -11,7 +11,7 @@
 
 <body>
 <nav>
-    <h1><a href="home.php">Cooking Recipes Collection</a></h1>
+    <h1><a href="index.php">Cooking Recipes Collection</a></h1>
     <ul>
         <li>Welcome, Admin</li>
         <li><a href="addRecipe.php">Add a Recipe</a></li>

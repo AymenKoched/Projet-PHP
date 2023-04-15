@@ -9,7 +9,7 @@ $rep= new RecipesRepository("recipes");
 $recipe = $rep->findById($id);
 ?>
 
-<form action="mofifierRecipe.php" method="post" enctype="multipart/form-data">
+<form action="modifierRecipe.php" method="post" enctype="multipart/form-data">
     <h2>Update Recipe</h2>
 
     <label for="title">Nom</label>
