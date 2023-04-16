@@ -1,8 +1,8 @@
 <?php
-include_once 'fragments/header.php';
+include_once 'fragments/header2.php';
 
 
-include 'requireGuest.php';
+
 ?>
 <form action="signupProcess.php" method="post">
     <label for="name">Display Name</label>

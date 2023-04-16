@@ -18,7 +18,7 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <input type="text" name="nom" id="title" value="<?=$recipe->nom?>" required />
 
     <label for="author">Author</label>
-    <input type="text" name="author" id="author" value="<?=$recipe->author?>" required />
+    <input type="text" name="author" id="author" readonly value="<?=$recipe->author?>" required />
 
     <label for="ingredients">Ingrédients (separate with '-')</label>
     <textarea id="ingredients" name="ingrediants"><?=$recipe->ingrediants?></textarea>

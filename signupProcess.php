@@ -1,10 +1,9 @@
 <?php
-session_start();
-include_once 'UserRepository.php';
+session_start();include_once 'UserRepository.php';
+$UserRepository = new UserRepository('user');
 $name = $_POST["name"];
 $email = $_POST["email"];
 $pwd = $_POST["password"];
-$UserRepository = new UserRepository('user');
 $user = $UserRepository->findByEmail($email);
 if($user){
     //var_dump(isset($user));
