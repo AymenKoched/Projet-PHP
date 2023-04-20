@@ -151,3 +151,34 @@ list-style-type: decimal;
   color: #fafafa;
 }
 
+
+.comment_container{
+  margin: 3rem auto;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  width: min(90% , 1140px);
+  min-height: 100%;
+  border-left: 6px solid #FEE996;
+
+}
+
+.comment_card{
+  padding: 20px;
+  min-width: 100%;
+  margin: 10px ;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.comment_card h3 , .comment_card p {
+  margin-bottom: 1rem;
+}
+
+.comment_card .comment_footer{
+  display: flex;
+  font-size: .85rem;
+  opacity: .6;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}

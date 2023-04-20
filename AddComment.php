@@ -1,11 +1,4 @@
-<?php
-$pageTitle = 'Recipes | Add-Recipe';
-include 'fragments/header.php';
-include 'requireAuthenticated.php';
-?>
-
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="addCommentProcess.php" method="post" enctype="multipart/form-data">
     <h2>Add Recipe</h2>
 
     <label for="title">Nom</label>
@@ -37,11 +30,6 @@ include 'requireAuthenticated.php';
     </select>
 
     <button type="submit">Create</button>
+    <input type="hidden" name="recipe_added" value="1">
 
 </form>
-
-
-<?php
-include 'fragments/footer.php';
-?>
-

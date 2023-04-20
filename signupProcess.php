@@ -5,10 +5,13 @@ $name = $_POST["name"];
 $email = $_POST["email"];
 $pwd = $_POST["password"];
 $UserRepository = new UserRepository('user');
-$user = $UserRepository->findByEmail($email);
-if($user){
-    //var_dump(isset($user));
+$user1 = $UserRepository->findByEmail($email);
+$user2 = $UserRepository->findByName($name);
+
+if($user1) {
     header("location:signUp.php?erreur=Email déja existant !");
+} elseif ($user2){
+    header("location:signUp.php?erreur=Display Name déja existant !");
 } else {
     $UserRepository->Create(['email' => $email,'pwd'=>$pwd,'name'=>$name]);
     $_SESSION["user"] = $email;

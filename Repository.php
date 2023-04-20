@@ -33,6 +33,13 @@ abstract class Repository
         return $reponse->fetch(PDO::FETCH_OBJ);
     }
 
+    public function findByName($name){
+        $requete = "select * from $this->tableName where name = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$name]);
+        return $reponse->fetch(PDO::FETCH_OBJ);
+    }
+
     public function Create ($params){
         $keys = array_keys($params);
         // ['id' , 'nom' , 'prenom' , 'age']
