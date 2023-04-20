@@ -16,8 +16,8 @@ session_start();
 <nav>
     <h1><a href="index.php">Cooking Recipes Collection</a></h1>
     <ul>
-        <form method="GET" action="" class="searchForm">
-                  <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
+        <form method="GET" action="SearchRecipe.php" class="searchForm">
+            <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
         </form>
         <!-- we can add hover effect -->
         <?php if(isset($_SESSION["name"])) { ?>
@@ -27,7 +27,7 @@ session_start();
         <li><a href="../about.php">About</a></li>
         <li><a href="../contact.php">Contact</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
-        <li><a href="logout.php" class="btn">Log out</a></li>
+            <li><a href="logout.php" class="btn">Log out</a></li>
         <?php }  else { ?>
             <li><a href="signUp.php" class="btn">Sign Up</a></li>
             <li><a href="login.php" class="btn">Log In</a></li>
