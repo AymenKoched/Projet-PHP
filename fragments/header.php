@@ -16,7 +16,9 @@ session_start();
 <nav>
     <h1><a href="index.php">Cooking Recipes Collection</a></h1>
     <ul>
-        <li><input class ="search" placeholder="Search your best dish!"></li>
+        <form method="GET" action="" class="searchForm">
+                  <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
+        </form>
         <!-- we can add hover effect -->
         <?php if(isset($_SESSION["name"])) { ?>
         <li>Welcome, <?= $_SESSION["name"] ?></li>
