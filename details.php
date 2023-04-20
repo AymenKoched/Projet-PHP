@@ -90,6 +90,10 @@ if(isset($_SESSION['name'])){
 ?>
 
 <?php
+include 'comments.php';
+?>
+
+<?php
 include 'fragments/footer.php';
 ?>
 
