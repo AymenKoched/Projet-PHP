@@ -150,4 +150,40 @@ list-style-type: decimal;
 .delete a {
   color: #fafafa;
 }
+.search {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: 10px;
+  transition-duration: 500ms;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid white;
+  overflow: hidden;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-position: 45% 50%;
+}
+.search:hover {
+border : 1px solid #fee996;
+}
+.search:focus
+{
+  width: 200px;
+  cursor : text ;
+  padding-left: 40px;
+  color : #000000;
+  outline : none ;
+  border-width: 2px 2px;
+  border-radius: 40px;
+  border-color: #fee996;
+  background: url('http://cliparts.co/cliparts/rTL/n8R/rTLn8RLBc.png') no-repeat;
+  background-size: 22px;
+  background-color: transparent;
+  background-position: 10px 50%;
 
+}
+.search:not(:focus) {
+  text-indent: -9999px;
+}
