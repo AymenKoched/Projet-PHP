@@ -12,12 +12,6 @@ class CommentRepository extends Repository
         $reponse->execute([$recipeId]);
         return $reponse->fetchAll(PDO::FETCH_OBJ);
     }
-    public function countByRecipeId($recipeId)
-    {
-        $requete = "select COUNT(*) from $this->tableName where RecipeId=?";
-        $reponse = $this->cnxPDO->prepare($requete);
-        $reponse->execute([$recipeId]);
-        return $reponse->fetchAll(PDO::FETCH_OBJ);
-    }
+
 }
 ?>
