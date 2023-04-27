@@ -23,12 +23,12 @@ class CommentRepository extends Repository
         $liked_by = $comment->Likers ? explode(',', $comment->Likers) : [];
         return in_array($user_id,$liked_by);
     }
-    public function UpdateById($id,$params){
+    public function UpdateByName($nom,$params){
         $keys = array_keys($params);
         $setClause = implode('=?, ', $keys) . '=?';
         $requete = "UPDATE $this->tableName SET $setClause WHERE nom = ?";
         $values = array_values($params);
-        $values[] = $id;
+        $values[] = $nom;
         $reponse = $this->cnxPDO->prepare($requete);
         $reponse->execute($values);
         return $reponse->fetch(PDO::FETCH_OBJ);

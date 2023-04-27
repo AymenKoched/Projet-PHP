@@ -27,3 +27,6 @@ if ($recipeNameWanted) {
     <?php } ?>
 <?php } ?>
 
+<?php
+include 'fragments/footer.php';
+?>

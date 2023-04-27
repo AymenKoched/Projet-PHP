@@ -19,9 +19,9 @@
 
                 if ($liked) {
                 ?>
-                <a href="LikeProcess.php?comment_id=<?php echo $comment->nom?>"><img src="Heart.ico" width="20px" height="20px"></a>
+                <a href="LikeProcess.php?comment_name=<?php echo $comment->nom?>"><img src="heartLike.ico" width="20px" height="20px"></a>
                 <?php } else { ?>
-                <a href="LikeProcess.php?comment_id=<?php echo $comment->nom?>"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <a href="LikeProcess.php?comment_name=<?php echo $comment->nom?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
                 <?php } }?>
             </div>
         </div>
