@@ -11,7 +11,18 @@
             <div class="comment_footer">
                 <div>By <?php echo $comment->author ?></div>
                 <div>Likes <?php echo $comment->Likes ?></div>
-                <a href="LikeProcess.php"><img src="heart.ico" width="20px" height="20px"></a>
+                <?php
+                $liked = false;
+                if (isset($_SESSION["user"])) {
+                    $user_id = $_SESSION["user"];
+                    $liked = $rep->isLikedByUser($comment->nom, $user_id);
+
+                if ($liked) {
+                ?>
+                <a href="LikeProcess.php?comment_id=<?php echo $comment->nom?>"><img src="Heart.ico" width="20px" height="20px"></a>
+                <?php } else { ?>
+                <a href="LikeProcess.php?comment_id=<?php echo $comment->nom?>"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <?php } }?>
             </div>
         </div>
         <?php
