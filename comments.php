@@ -11,7 +11,7 @@
             <div class="comment_footer">
                 <div>By <?php echo $comment->author ?></div>
                 <div>Likes <?php echo $comment->Likes ?></div>
-                <a href="LikeProcess.php"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <a href="LikeProcess.php"><img src="heart.ico" width="20px" height="20px"></a>
             </div>
         </div>
         <?php

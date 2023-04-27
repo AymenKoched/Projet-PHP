@@ -13,4 +13,12 @@ class RecipesRepository extends Repository
         $reponse->execute([$name]);
         return $reponse->fetch(PDO::FETCH_OBJ);
     }
+
+    public function searchByName($name) {
+        $query = "SELECT * FROM {$this->tableName} WHERE nom LIKE ?";
+        $stmt = $this->cnxPDO->prepare($query);
+        $stmt->execute(['%' . $name . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 }
