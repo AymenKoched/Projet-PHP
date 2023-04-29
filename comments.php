@@ -6,7 +6,7 @@
     foreach($comments as $comment){
         ?>
         <div class="comment_card">
-            <h3 class="comment_title"><?php echo $comment->nom ?></h3>
+
             <p><?php echo $comment->text ?></p>
             <div class="comment_footer">
                 <div>By <?php echo $comment->author ?></div>
@@ -15,13 +15,13 @@
                 $liked = false;
                 if (isset($_SESSION["user"])) {
                     $user_id = $_SESSION["user"];
-                    $liked = $rep->isLikedByUser($comment->nom, $user_id);
+                    $liked = $rep->isLikedByUser($comment->id, $user_id);
 
                 if ($liked) {
                 ?>
-                <a href="LikeProcess.php?comment_name=<?php echo $comment->nom?>"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <a href="LikeProcess.php?comment_name=<?php echo $comment->id?>"><img src="heartLike.ico" width="20px" height="20px"></a>
                 <?php } else { ?>
-                <a href="LikeProcess.php?comment_name=<?php echo $comment->nom?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
+                <a href="LikeProcess.php?comment_name=<?php echo $comment->id?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
                 <?php } }?>
             </div>
         </div>
@@ -35,9 +35,6 @@ if(isset($_SESSION["name"]))
 ?>
 <form action="addCommentProcess.php" method="post" enctype="multipart/form-data">
     <h2>Add Comment</h2>
-
-    <label for="title">Title</label>
-    <input type="text" name="nom" id="title" required />
 
     <label for="title">Text</label>
     <textarea style="resize:none" rows=7 type="text" name="text" id="text" required></textarea>
