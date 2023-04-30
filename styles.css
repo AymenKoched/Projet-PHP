@@ -49,7 +49,7 @@ form h2{
   font-weight: 900;
   margin-bottom: 40px;
 }
-form{
+form:not(.searchForm) {
   width: 360px;
   margin: 50px auto;
   padding: 30px;
@@ -150,4 +150,156 @@ list-style-type: decimal;
 .delete a {
   color: #fafafa;
 }
+.search {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: 10px;
+  transition-duration: 500ms;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid white;
+  overflow: hidden;
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-repeat: no-repeat;
+  background-size: 22px;
+  background-position: 45% 50%;
+}
+.search:hover {
+border : 1px solid #fee996;
+}
+.search:focus
+{
+  width: 155px;
+  cursor : text ;
+  padding-left: 40px;
+  color : #000000;
+  outline : none ;
+  border-width: 2px 2px;
+  border-radius: 40px;
+  border-color: #fee996;
+  background: url('http://cliparts.co/cliparts/rTL/n8R/rTLn8RLBc.png') no-repeat;
+  background-size: 22px;
+  background-color: transparent;
+  background-position: 10px 50%;
+}
+.search:not(:focus) {
+  text-indent: -9999px;
+}
 
+
+.comment_container{
+  margin: 3rem auto;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  width: min(90% , 1140px);
+  min-height: 100%;
+  border-left: 6px solid #FEE996;
+
+}
+
+.comment_card{
+  padding: 20px;
+  min-width: 100%;
+  margin: 10px ;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.comment_card h3 , .comment_card p {
+  margin-bottom: 1rem;
+}
+
+.comment_card .comment_footer{
+  display: flex;
+  font-size: .85rem;
+  opacity: .6;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.mapdiv
+{
+  width  : 28%;
+  margin: auto ;
+}
+.mapdiv path
+{
+  fill : #FEE996;
+  stroke : #000000;
+  stroke-width : 4px ;
+  transition : fill 0.3s;
+}
+.mapdiv :hover
+{
+  fill : #8c8989;
+  stroke-width: 7px;
+}
+.h11 , .h22
+{
+  text-align: center;
+}
+
+.fa-bookmark {
+  font-size: 18px;
+}
+.img-container {
+  width: 60%;
+  overflow: hidden;
+  margin: auto;
+  height: 650px;
+  object-fit: cover;
+}
+.img-container img {
+  width:100%;
+  height: 100%;
+}
+.flex {
+  width:60%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 45px;
+}
+.flex .time,.flex .bkmark {
+  width: 50%;
+  text-align: center;
+  font-size: 33px !important;
+  position: relative;
+}
+.flex .fa-bookmark {
+  font-size: 33px !important;
+  padding-right: 50px;
+  position: relative;
+  transition: 0.7s;
+}
+.flex .fa-bookmark:hover{
+  transform: scale(1.03);
+}
+.flex .time {
+  padding-left: 50px;
+}
+.flex .bkmark .fa-bookmark::after{
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgb(243, 235, 232), rgb(238, 178, 140), rgb(246, 134, 86));
+  left: -18px;
+  top: -13px;
+  z-index: -1;
+}
+
+.message{
+  width: fit-content;
+  padding: 10px;
+  position: absolute;
+  font-size: 16px;
+  background-color: white;
+  margin-top: 25px;
+  border-radius: 5px;
+  box-shadow: 0 5px 25px rgba(1 1 1 /15%);
+  display: none;
+  transition: 0.5s;
+}

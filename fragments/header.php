@@ -11,21 +11,28 @@ session_start();
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
     <script defer src="https://kit.fontawesome.com/79198b1732.js" crossorigin="anonymous"></script>
+    <script defer src="scripts/bookmark.js"></script>
 </head>
 
 <body>
 <nav>
     <h1><a href="index.php">Cooking Recipes Collection</a></h1>
     <ul>
+        <form method="GET" action="SearchRecipe.php" class="searchForm">
+            <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
+        </form>
         <!-- we can add hover effect -->
         <?php if(isset($_SESSION["name"])) { ?>
         <li>Welcome, <?= $_SESSION["name"] ?></li>
         <?php } ?>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../about.php">About</a></li>
-        <li><a href="../contact.php">Contact</a></li>
+        <li><a href="../category.php">Category</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
-        <li><a href="logout.php" class="btn">Log out</a></li>
+            <!-- elpage hathy thezk lil bookmarks mta3ek-->
+            <li><a href="bookmarks.php"><i class="fa-regular fa-bookmark" style="color: #fee996;"></i> BOOKMARKS</a></li>
+            <li><a href="logout.php" class="btn">Log out</a></li>
+
 
         <?php }  else { ?>
             <li><a href="signUp.php" class="btn">Sign Up</a></li>

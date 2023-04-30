@@ -7,4 +7,26 @@ class RecipesRepository extends Repository
     {
             parent::__construct('recipes');
     }
+    public function findByNom($name){
+        $requete = "select * from $this->tableName where nom = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$name]);
+        return $reponse->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function searchByName($name) {
+        $query = "SELECT * FROM {$this->tableName} WHERE nom LIKE ?";
+        $stmt = $this->cnxPDO->prepare($query);
+        $stmt->execute(['%' . $name . '%']);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function findByCategory($categorie)
+    {
+        $requete = "select * from $this->tableName where categorie = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$categorie]);
+        return $reponse->fetchAll(PDO::FETCH_OBJ);
+    }
+
+
 }

@@ -6,12 +6,18 @@ require_once('ConnexionPDO.php');
     $ingrediant = $_POST['ingredients'];
     $etape = $_POST['etapes'];
     $rating = $_POST['rating'];
+if (!empty($_POST['categories'])) {
     $categorie = $_POST['categories'];
+    // continue with your SQL query
+} else {
+    $categories = "pas de categorie ";
+}
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["my_image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     move_uploaded_file($_FILES["my_image"]["tmp_name"], $target_file);
-    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie) VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
+    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie)
+              VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);
     $statement->bindParam(':author', $author);
