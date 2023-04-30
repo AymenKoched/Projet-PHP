@@ -11,10 +11,15 @@ $recipe = $rep->findById($id);
 $image=$recipe->image;
 $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 
-$email = $_SESSION["user"];
+
 $id = $_GET["id"];
 $rep= new BookmarkRepository('bookmarks');
-$recipee = $rep->findByRecipeAndUser($email,$id);
+
+
+
+
+
+
 
 
 ?>
@@ -24,10 +29,20 @@ $recipee = $rep->findByRecipeAndUser($email,$id);
     </div>
     <h2 class="recName"><?= strtoupper($recipe->nom) ?></h2>
     <div class="flex">
+        <?php if(!isset($_SESSION["user"])) { ?>
+        <div class="time" style="width: 100%">
+            <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
+            45 MINUTES
+        </div>
+        <?php } else { ?>
         <div class="time">
             <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
             45 MINUTES
         </div>
+        <?php } ?>
+        <?php if(isset($_SESSION["user"])) {
+            $email =$_SESSION["user"] ;
+            $recipee = $rep->findByRecipeAndUser($email,$id); ?>
         <div class="bkmark">
             <?php
             if(isset($recipee->recipeID)) {
@@ -39,29 +54,31 @@ $recipee = $rep->findByRecipeAndUser($email,$id);
                 <div class="message"></div>
              <?php } ?>
         </div>
+        <?php } ?>
     </div>
 
-    <h5>Ingrédients:</h5>
+    <h5 class="recIngre">RECIPE INGREDIENTS</h5>
     <ul class="ingrediants">
         <?php
         $ingrediants = explode('-', $recipe->ingrediants);
         $ingrediants = array_map('trim', $ingrediants);
         foreach ($ingrediants as $element){
-            if ($element != "")
-            echo "<li>$element</li>";
-        }
-        ?>
+            if ($element != "") ?>
+                <div class="list-item">
+                <i class="fa-solid fa-check" style="color: #dbb1aa;"></i>
+                <li> <?= $element ?> </li>
+                </div>
+        <?php } ?>
     </ul>
-    <h5>Etapes:</h5>
+    <h5 class="how">HOW TO COOK IT</h5>
     <ul class="etapes">
         <?php
         $etapes = explode('-', $recipe->etapes);
         $etapes = array_map('trim', $etapes);
         foreach ($etapes as $etape){
-            if ($etape !="" )
-            echo "<li>$etape</li>";
-        }
-        ?>
+            if ($etape !="" )  ?>
+             <li><?= $etape ?></li>
+        <?php } ?>
     </ul>
     <h5>Categorie: <?= $recipe->categorie ?></h5>
     <h5>Rating: <?= $recipe->rating?></h5>

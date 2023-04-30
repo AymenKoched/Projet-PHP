@@ -1,6 +1,8 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+* {
+  box-sizing: border-box;
+}
 body{
   margin: 20px 40px;
   font-size: 1.2rem;
@@ -132,9 +134,29 @@ footer{
 }
 
 .details  .ingrediants{
-  list-style-type: circle;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  flex-wrap: wrap;
+  margin: auto;
 }
-
+.details  .ingrediants .list-item {
+  width: 50%;
+  padding: 15px;
+  font-size: 23px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.details  .ingrediants .list-item li {
+  width: 70%;
+  text-indent: 25px;
+}
+.details  .ingrediants .list-item i {
+  width: 30%;
+  text-align: right;
+}
 .details .etapes{
 list-style-type: decimal;
 }
@@ -142,7 +164,9 @@ list-style-type: decimal;
 .details li {
   margin-bottom: 5px;
 }
-
+.details  .etapes ul {
+  text-align: center;
+}
 .delete {
   background-color: darkred;
 }
@@ -303,7 +327,7 @@ border : 1px solid #fee996;
   display: none;
   transition: 0.5s;
 }
-.recName {
+.recName  {
   width:fit-content;
   margin: auto;
   font-size: 45px;
@@ -311,4 +335,10 @@ border : 1px solid #fee996;
   background: linear-gradient(135deg, rgb(248, 197, 170), rgb(253, 103, 37));
   padding: 15px 10px;
   transform: translate(-10%,-60%) skewY(-5deg);
+}
+.recIngre ,.how {
+  margin-top: 60px !important;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(255, 163, 147);
 }
