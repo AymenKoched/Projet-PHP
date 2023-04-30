@@ -25,7 +25,7 @@ session_start();
         <?php } ?>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../about.php">About</a></li>
-        <li><a href="../contact.php">Contact</a></li>
+        <li><a href="../category.php">Category</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
             <li><a href="logout.php" class="btn">Log out</a></li>
         <?php }  else { ?>

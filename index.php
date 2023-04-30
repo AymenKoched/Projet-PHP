@@ -5,7 +5,12 @@ include 'fragments/header.php';
 require_once 'RecipesRepository.php';
 $rep = new RecipesRepository('recipes');
 
-$recipes = $rep->findAll();
+if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
+    $recipes = $rep->findByCategory($_GET['categorie']);
+} else {
+    $recipes = $rep->findAll();
+}
+
 if (!$recipes) {
     echo "<div>No Recipes to display ..</div>";
 } else {
@@ -21,9 +26,8 @@ if (!$recipes) {
             </a>
         <?php } ?>
     </ul>
+    <?php
+}
 
-<?php } ?>
-
-<?php
 include 'fragments/footer.php';
 ?>

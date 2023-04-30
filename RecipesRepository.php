@@ -20,5 +20,11 @@ class RecipesRepository extends Repository
         $stmt->execute(['%' . $name . '%']);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
+    public function findByCategory($categorie)
+    {
+        $requete = "select * from $this->tableName where categorie = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$categorie]);
+        return $reponse->fetchAll(PDO::FETCH_OBJ);
+    }
 }

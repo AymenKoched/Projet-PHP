@@ -218,3 +218,24 @@ border : 1px solid #fee996;
   justify-content: flex-end;
   align-items: center;
 }
+.mapdiv
+{
+  width  : 28%;
+  margin: auto ;
+}
+.mapdiv path
+{
+  fill : #FEE996;
+  stroke : #000000;
+  stroke-width : 4px ;
+  transition : fill 0.3s;
+}
+.mapdiv :hover
+{
+  fill : #8c8989;
+  stroke-width: 7px;
+}
+.h11 , .h22
+{
+  text-align: center;
+}
