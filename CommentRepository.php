@@ -19,6 +19,12 @@ class CommentRepository extends Repository
         return in_array($user_id,$liked_by);
     }
 
+    public function DeleteByRecipeID($Recipeid){
+        $requete = "delete from $this->tableName where RecipeId = ?";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$Recipeid]);
+    }
+
 
 }
 ?>
