@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Get the comment ID and user ID from the query string or post data
-$comment_name = $_GET['comment_name']; // or $_POST['comment_id']
+$comment_name = $_GET['comment_id']; // or $_POST['comment_id']
 $user_id = $_SESSION['user']; // or $_POST['user_id']
 
 // Update the 'liked_by' property of the comment with the user ID

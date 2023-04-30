@@ -28,7 +28,7 @@ include 'requireAuthenticated.php';
 
     <label for="categories">Categories</label>
     <select id="categories" name="categories" required>
-        <option selected>Open this select menu</option>
+        <option selected disabled>Open this select menu</option>
         <option value="Nabeul">Nabeul</option>
         <option value="Touzeur">Touzeur</option>
         <option value="Manubah">Manubah</option>

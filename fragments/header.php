@@ -24,8 +24,8 @@ session_start();
         <li>Welcome, <?= $_SESSION["name"] ?></li>
         <?php } ?>
         <li><a href="addRecipe.php">Add a Recipe</a></li>
-        <li><a href="../about.php">About</a></li>
         <li><a href="../category.php">Category</a></li>
+        <li><a href="../about.php">About</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
             <li><a href="logout.php" class="btn">Log out</a></li>
         <?php }  else { ?>
