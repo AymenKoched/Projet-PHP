@@ -16,7 +16,7 @@ session_start();
 
 <body>
 <nav>
-    <h1><a href="index.php"><img src="uploads/dsa.png"></a></h1>
+    <h1><a href="index.php"><img src="logo.png"></a></h1>
     <ul>
         <form method="GET" action="SearchRecipe.php" class="searchForm">
             <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
@@ -32,8 +32,6 @@ session_start();
             <!-- elpage hathy thezk lil bookmarks mta3ek-->
             <li><a href="bookmarks.php"><i class="fa-regular fa-bookmark" style="color: #fee996;"></i> BOOKMARKS</a></li>
             <li><a href="logout.php" class="btn">Log out</a></li>
-
-
         <?php }  else { ?>
             <li><a href="signUp.php" class="btn">Sign Up</a></li>
             <li><a href="login.php" class="btn">Log In</a></li>

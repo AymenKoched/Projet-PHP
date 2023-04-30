@@ -316,7 +316,7 @@ border : 1px solid #fee996;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgb(243, 235, 232), rgb(238, 178, 140), rgb(246, 134, 86));
+  background: darkred;
   left: -18px;
   top: -13px;
   z-index: -1;
@@ -339,7 +339,7 @@ border : 1px solid #fee996;
   margin: auto;
   font-size: 45px;
   color: white;
-  background: linear-gradient(135deg, rgb(248, 197, 170), rgb(253, 103, 37));
+  background: linear-gradient(135deg, #FEE996, darkred);
   padding: 15px 10px;
   transform: translate(-10%,-60%) skewY(-5deg);
 }
@@ -348,7 +348,7 @@ border : 1px solid #fee996;
   margin-top: 60px !important;
   text-align: center;
   font-size: 35px;
-  color: rgb(255, 163, 147);
+  color: darkred;
 }
 nav a img {
   height: 100%;

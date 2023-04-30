@@ -14,32 +14,29 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 
 $id = $_GET["id"];
 $rep= new BookmarkRepository('bookmarks');
-
-
-
-
-
-
-
-
 ?>
+
 <div class="details">
     <div class="img-container">
-    <img src="<?=$dataUri?>" alt="recipe img">
+        <img src="<?=$dataUri?>" alt="recipe img">
     </div>
+
     <h2 class="recName"><?= strtoupper($recipe->nom) ?></h2>
     <div class="flex">
+
         <?php if(!isset($_SESSION["user"])) { ?>
         <div class="time" style="width: 100%">
-            <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
+            <i class="fa-regular fa-clock" style="color: darkred;"></i>
             45 MINUTES
         </div>
         <?php } else { ?>
         <div class="time">
-            <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
+            <i class="fa-regular fa-clock" style="color: darkred;"></i>
             45 MINUTES
         </div>
         <?php } ?>
+
+
         <?php if(isset($_SESSION["user"])) {
             $email =$_SESSION["user"] ;
             $recipee = $rep->findByRecipeAndUser($email,$id); ?>
@@ -63,22 +60,23 @@ $rep= new BookmarkRepository('bookmarks');
         $ingrediants = explode('-', $recipe->ingrediants);
         $ingrediants = array_map('trim', $ingrediants);
         foreach ($ingrediants as $element){
-            if ($element != "") ?>
+            if ($element != ""){ ?>
                 <div class="list-item">
-                <i class="fa-solid fa-check" style="color: #dbb1aa;"></i>
-                <li> <?= $element ?> </li>
+                    <i class="fa-solid fa-check" style="color: #FEE996;"></i>
+                    <li> <?= $element ?> </li>
                 </div>
-        <?php } ?>
+        <?php }} ?>
     </ul>
+
     <h5 class="how">HOW TO COOK IT</h5>
     <ul class="etapes">
         <?php
         $etapes = explode('-', $recipe->etapes);
         $etapes = array_map('trim', $etapes);
         foreach ($etapes as $etape){
-            if ($etape !="" )  ?>
+            if ($etape !="" ) { ?>
              <li><?= $etape ?></li>
-        <?php } ?>
+        <?php }} ?>
     </ul>
     <h5>Categorie: <?= $recipe->categorie ?></h5>
     <h5>Rating: <?= $recipe->rating?></h5>
