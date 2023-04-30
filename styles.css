@@ -1,8 +1,6 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-* {
-  box-sizing: border-box;
-}
+
 body{
   margin: 20px 40px;
   font-size: 1.2rem;
@@ -142,7 +140,7 @@ footer{
   margin: auto;
 }
 .details  .ingrediants .list-item {
-  width: 50%;
+  width: calc(50% - 30px);
   padding: 15px;
   font-size: 23px;
   display: flex;
@@ -164,9 +162,18 @@ list-style-type: decimal;
 .details li {
   margin-bottom: 5px;
 }
-.details  .etapes ul {
-  text-align: center;
+
+.details  .how {
+  margin-bottom: 25px;
 }
+.details  .etapes li{
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+
+
 .delete {
   background-color: darkred;
 }
