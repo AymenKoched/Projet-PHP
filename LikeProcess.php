@@ -14,14 +14,14 @@ if (!in_array($user_id, $liked_by)) {
     $liked_by[] = $user_id;
     $likes++;
     $params = ['Likes'=>$likes,'Likers' => implode(',', $liked_by)];
-    $rep->UpdateByName($comment_name, $params);
+    $rep->UpdateById($comment_name, $params);
 }
 else{
     $index = array_search($user_id, $liked_by);
     array_splice($liked_by, $index, 1);
     $likes--;
     $params = ['Likes'=>$likes,'Likers' => implode(',', $liked_by)];
-    $rep->UpdateByName($comment_name, $params);
+    $rep->UpdateById($comment_name, $params);
 }
 
 // Redirect back to the previous page
