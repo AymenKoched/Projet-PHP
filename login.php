@@ -18,7 +18,7 @@ if(isset($_GET["message"])) $message = $_GET["message"];
 
 <body>
 <nav>
-    <h1><a href="index.php">Cooking Recipes Collection</a></h1>
+    <h1><a href="index.php"><img src="uploads/dsa.png"></a></h1>
 </nav>
 
 <form action="loginProcess.php" method="post" enctype="multipart/form-data">
