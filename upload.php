@@ -6,7 +6,12 @@ require_once('ConnexionPDO.php');
     $ingrediant = $_POST['ingredients'];
     $etape = $_POST['etapes'];
     $rating = $_POST['rating'];
+if (!empty($_POST['categories'])) {
     $categorie = $_POST['categories'];
+    // continue with your SQL query
+} else {
+    $categories = "pas de categorie ";
+}
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["my_image"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
