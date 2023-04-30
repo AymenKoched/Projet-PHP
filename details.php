@@ -60,7 +60,7 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 if(isset($_SESSION['name'])){
     if($_SESSION['name'] === $recipe->author){ ?>
         <button><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
-        <button class="delete"><a href="delete.php?id=<?= $recipe->id;?>">Delete</a></button>
+        <button class="delete"><a href="deleteRecipesProcess.php?id=<?= $recipe->id;?>">Delete</a></button>
 <?php
     }
 }
