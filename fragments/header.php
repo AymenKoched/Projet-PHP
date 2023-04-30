@@ -16,7 +16,7 @@ session_start();
 
 <body>
 <nav>
-    <h1><a href="index.php">Cooking Recipes Collection</a></h1>
+    <h1><a href="index.php"><img src="uploads/dsa.png"></a></h1>
     <ul>
         <form method="GET" action="SearchRecipe.php" class="searchForm">
             <li><input class ="search" name="search" placeholder="Search your best dish!"></li>
