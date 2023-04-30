@@ -19,11 +19,10 @@ $recipee = $rep->findByRecipeAndUser($email,$id);
 
 ?>
 <div class="details">
-    <h2><?= $recipe->nom ?></h2>
     <div class="img-container">
     <img src="<?=$dataUri?>" alt="recipe img">
     </div>
-
+    <h2 class="recName"><?= strtoupper($recipe->nom) ?></h2>
     <div class="flex">
         <div class="time">
             <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
