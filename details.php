@@ -1,7 +1,7 @@
 <?php
 $pageTitle = 'Recipes | Details';
 include 'fragments/header.php';
-
+include_once 'BookmarkRepository.php';
 $id = htmlentities($_GET['id']);
 
 require_once ('RecipesRepository.php');
@@ -10,6 +10,12 @@ $recipe = $rep->findById($id);
 
 $image=$recipe->image;
 $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
+
+$email = $_SESSION["user"];
+$id = $_GET["id"];
+$rep= new BookmarkRepository('bookmarks');
+$recipee = $rep->findByRecipeAndUser($email,$id);
+
 
 ?>
 <div class="details">
@@ -24,8 +30,15 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
             45 MINUTES
         </div>
         <div class="bkmark">
+            <?php
+            if(isset($recipee->recipeID)) {
+            ?>
             <div><a href="bookmarkProcess.php?id=<?= $id ?>"><i class="fa-regular fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
             <div class="message"></div>
+            <?php } else {  ?>
+                <div><a href="bookmarkProcess.php?id=<?= $id ?>"><i class="fa-solid fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
+                <div class="message"></div>
+             <?php } ?>
         </div>
     </div>
 
