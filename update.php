@@ -37,11 +37,30 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <label for="categories">Categories</label>
     <select id="categories" name="categories"  required>
         <option selected><?=$recipe->categorie?></option>
-        <option value="Tounsia">Tounsia</option>
-        <option value="Arbia">Arbia</option>
-        <option value="Souri">Souri</option>
-        <option value="7arra">7arra</option>
-        <option value="7loua">7loua</option>
+        <option value="Nabeul">Nabeul</option>
+        <option value="Touzeur">Touzeur</option>
+        <option value="Manubah">Manubah</option>
+        <option value="Béja">Béja</option>
+        <option value="Ben Arous">Ben Arous</option>
+        <option value="Bizerte">Bizerte</option>
+        <option value="Jendouba">Jendouba</option>
+        <option value="Nabeul">Nabeul</option>
+        <option value="Tunis">Tunis</option>
+        <option value="Le Kef">Le Kef</option>
+        <option value="Kasserine">Kasserine</option>
+        <option value="Gabes">Gabes</option>
+        <option value="Gafsa">Gafsa</option>
+        <option value="Sidi Bouzid">Sidi Bouzid</option>
+        <option value="Sfax">Sfax</option>
+        <option value="Siliana">Siliana</option>
+        <option value="Mahdia">Mahdia</option>
+        <option value="Monastir">Monastir</option>
+        <option value="Kairouan">Kairouan</option>
+        <option value="Sousse">Sousse</option>
+        <option value="Zaghouan">Zaghouan</option>
+        <option value="Médenine">Médenine</option>
+        <option value="Kebili">Kebili</option>
+        <option value="Tatouine">Tatouine</option>
     </select>
 
     <input hidden="hidden" name="id" type="number" class="form-control" value="<?=$recipe->id?>" >
