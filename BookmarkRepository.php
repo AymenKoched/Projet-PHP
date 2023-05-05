@@ -23,4 +23,22 @@ class BookmarkRepository extends Repository
         $reponse->execute([$email]);
         return $reponse->fetchAll(PDO::FETCH_OBJ);
     }
+
+
+    public function findBookmarksByRecipeId($id){
+        $requete = "select  count(*) from $this->tableName group by recipeID having recipeID = ? ";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$id]);
+        //return $reponse->fetch(PDO::FETCH_OBJ);
+        return $reponse->fetchColumn();
+    }
+
+
+    public function findAllOderedByBookmarks(){
+        $requete = "select recipeID from $this->tableName group by recipeID order by count(userEmail) DESC";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([]);
+        return $reponse->fetchAll(PDO::FETCH_OBJ);
+    }
+
 }

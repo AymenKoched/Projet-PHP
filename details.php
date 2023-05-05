@@ -13,6 +13,11 @@ $dataUri = 'data:image/jpeg;base64,' . base64_encode($image);
 
 
 $id = $_GET["id"];
+$visits = $rep->findVisitsById($id);
+$rep->UpdateVisitsByOne($visits->visits,$id);
+
+
+
 $rep= new BookmarkRepository('bookmarks');
 ?>
 
