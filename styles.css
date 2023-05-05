@@ -357,3 +357,83 @@ nav a img {
   max-width: 200px;
   vertical-align: middle;
 }
+.team-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.member{
+  height: 320px;
+  width: 240px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.member .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0%);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.member:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.member .card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.member .back-face{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.member:hover > .back-face{
+  transform: rotateY(0deg);
+}
+.member .back-face img{
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #eec600, #fee996);
+}
+.member .back-face .info{
+  text-align: center;
+}
+.back-face .info .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul{
+  display: flex;
+}
+.back-face ul a{
+  display: block;
+  height: 40px;
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #fee996, #fee996);
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover{
+  color: #eec600;
+  border-color: #eec600;
+  background: linear-gradient(375deg, transparent, transparent);
+}
