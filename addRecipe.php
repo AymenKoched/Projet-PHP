@@ -26,7 +26,7 @@ include 'requireAuthenticated.php';
     <label for="rating">Rating</label>
     <input id="rating"  type="number" name="rating" required>
 
-    <label for="categories">Categories</label>
+    <label for="categories">Region</label>
     <select id="categories" name="categories" required>
         <option selected disabled>Open this select menu</option>
         <option value="Nabeul">Nabeul</option>
@@ -55,7 +55,7 @@ include 'requireAuthenticated.php';
         <option value="Tatouine">Tatouine</option>
     </select>
 
-    <button type="submit">Create</button>
+    <button type="submit">DEPLOY</button>
 
 </form>
 

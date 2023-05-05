@@ -10,25 +10,49 @@ if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
 } else {
     $recipes = $rep->findAll();
 }
+?>
 
+
+<?php
 if (!$recipes) {
     echo "<div>No Recipes to display ..</div>";
 } else {
     ?>
-    <ul class="recipes">
+    <h3 class="dishes">Dishes</h3>
+    <ul class="plats">
         <?php foreach ($recipes as $recipe) { ?>
-            <a href="details.php?id=<?= $recipe->id; ?>">
-                <li class="recipe">
+
+            <div class="plat">
+                <div class="plat-img">
                     <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" alt="recipe img">
-                    <h4><?= $recipe->nom; ?><h4>
-                            <p>By <?= $recipe->author; ?></p>
-                </li>
-            </a>
+                </div>
+                <div class="plat-info">
+                    <p class="plat-name"><strong><?= strtoupper($recipe->nom); ?> </strong></p>
+                   <!--0 <p class="plat-description">This is a well known dish khasstan anou hama yhzeb yakelha m3a el 3ila wel ashab , houwa rw ki tji tchouf behya ema raw el kosksi kher t7e wella takrah wassalamou3alaykom .</p>
+                    -->
+                    <p class="plat-author"><strong>Author</strong> : <?= $recipe->author; ?> </p>
+                    <p class="plat-admiration"><strong>Bookmarks </strong> :
+                    <!--
+                    PARTIE HATHY NZIDOU FEHA NOMBRE MTA3 BOOKMARKS -->
+                    </p>
+                    <p class="plat-visitors"><strong>Visits Overall</strong> :
+
+                        <!--HNA NZIDOU EL VISITS-->
+
+                    </p>
+                    <div class="plat-details">
+                        <a href="details.php?id=<?= $recipe->id; ?>" class="see">See Details</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+
         <?php } ?>
     </ul>
     <?php
 }
 ?>
+
 <div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 <div class="subtitle">We are 5 INSAT pre-engineering students ,
                       hope you enjoy scorilling through our Website
