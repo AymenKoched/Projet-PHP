@@ -52,7 +52,6 @@ if (!$recipes) {
     <?php
 }
 ?>
-<div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 <div class="team-introduction">
     <div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 
