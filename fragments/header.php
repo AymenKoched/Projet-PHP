@@ -15,7 +15,7 @@ session_start();
 </head>
 
 <body>
-<nav>
+<nav id="nav-bar">
     <h1><a href="index.php"><img src="logo.png"></a></h1>
     <ul>
         <form method="GET" action="SearchRecipe.php" class="searchForm">

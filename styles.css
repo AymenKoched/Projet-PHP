@@ -5,7 +5,7 @@ body{
   margin: 20px 40px;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  background: #fafafa;
+  background-color: #F3F3F3FF !important;
 }
 h1, h2, h3, h4 , h5, ul, li, a, p, input, label, button, div, footer{
   margin: 0;
@@ -22,8 +22,11 @@ a{
 nav{
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 120px;
+  background: #fafafa !important;
+  border-radius: 25px;
+  padding: 10px;
 }
 nav ul{
   display: flex;
@@ -31,6 +34,7 @@ nav ul{
 }
 nav li{
   margin-left: 20px;
+  text-align: center;
 }
 nav li a{
   text-transform: uppercase;
@@ -585,4 +589,17 @@ padding: 5px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+#nav {
+  position: relative;
+  z-index: 1;
+}
+
+
+#nav-bar li a{
+  transition: 0.2s;
+}
+#nav-bar li a:hover  {
+  transform: translateX(-1px);
+  text-shadow: 1px 1px 1px gray;
 }

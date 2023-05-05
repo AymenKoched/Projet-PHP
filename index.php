@@ -12,13 +12,13 @@ if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
 }
 ?>
 
-
+<h3 class="dishes">Dishes</h3>
 <?php
 if (!$recipes) {
     echo "<div>No Recipes to display ..</div>";
 } else {
     ?>
-    <h3 class="dishes">Dishes</h3>
+
     <ul class="plats">
         <?php foreach ($recipes as $recipe) { ?>
 
@@ -52,7 +52,6 @@ if (!$recipes) {
     <?php
 }
 ?>
-<div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 <div class="team-introduction">
     <div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 
