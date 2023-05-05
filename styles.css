@@ -437,3 +437,47 @@ nav a img {
   border-color: #eec600;
   background: linear-gradient(375deg, transparent, transparent);
 }
+
+.team-introduction
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.team-members
+{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+.team-members:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background-color: #eec600;
+  border-radius: 50px;
+}
+.gradient-text {
+  background: linear-gradient(to right, #911804, #ff0042);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

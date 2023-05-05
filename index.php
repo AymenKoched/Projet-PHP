@@ -29,9 +29,11 @@ if (!$recipes) {
     <?php
 }
 ?>
-<div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
+<div class="team-introduction">
+    <div class="team-members"><span class="gradient-text">Meet</span> our Team</div>
 <div class="subtitle">We are 5 INSAT pre-engineering students ,
                       hope you enjoy scorilling through our Website
+</div>
 </div>
 <div class="team-container">
     <div class="member 1">
