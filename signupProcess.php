@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'UserRepository.php';
+
 $name = $_POST["name"];
 $email = $_POST["email"];
 $pwd = $_POST["password"];
@@ -13,8 +14,12 @@ if($user1) {
 } elseif ($user2){
     header("location:signUp.php?erreur=Display Name déja existant !");
 } else {
-    $UserRepository->Create(['email' => $email,'pwd'=>$pwd,'name'=>$name]);
+    $hash = password_hash($pwd, PASSWORD_DEFAULT);
+
+    $UserRepository->Create(['email' => $email,'pwd'=>$hash,'name'=>$name]);
     $_SESSION["user"] = $email;
     $_SESSION["name"] = $name;
     header("location:index.php");
 }
+
+?>
