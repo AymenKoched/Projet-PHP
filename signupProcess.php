@@ -10,9 +10,11 @@ $user1 = $UserRepository->findByEmail($email);
 $user2 = $UserRepository->findByName($name);
 
 if($user1) {
-    header("location:signUp.php?erreur=This email address is already taken! Try again.");
+    $_SESSION["erreur"] = 'This email address is already taken! Try again.';
+    header("location:signUp.php");
 } elseif ($user2){
-    header("location:signUp.php?erreur=This display name is already taken! Try again.");
+    $_SESSION["erreur"] = 'This display name is already taken! Try again.';
+    header("location:signUp.php");
 } else {
     $hash = password_hash($pwd, PASSWORD_DEFAULT);
 

@@ -18,7 +18,9 @@ if(isset($user)) {
     }
 }
 
-if(!$isAuthenticated)
-    header('location:login.php?erreur=Wrong credentials! Try again.');
+if(!$isAuthenticated){
+    $_SESSION["erreur"] = 'Wrong credentials! Try again.';
+    header('location:login.php');
 
+}
 ?>

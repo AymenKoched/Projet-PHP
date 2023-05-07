@@ -3,7 +3,10 @@ $pageTitle = 'Recipes | Sign up';
 include 'requireGuest.php';
 include_once 'fragments/header.php';
 
-if(isset($_GET["erreur"])) $erreur = $_GET["erreur"];
+if(isset($_SESSION["erreur"])){
+	$erreur = $_SESSION["erreur"];
+	unset($_SESSION["erreur"]);
+}
 ?>
 
 <form action="signupProcess.php" method="post">
