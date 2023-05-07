@@ -27,8 +27,7 @@ session_start();
         <li><a href="addRecipe.php">Add a Recipe</a></li>
         <li><a href="../category.php">Search By Region</a></li>
 
-        <!-- temchi ellouta -->
-        <li><a href="#about">About</a></li>
+        <li><a href="about.php">About</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
             <!-- elpage hathy thezk lil bookmarks mta3ek-->
             <li><a href="bookmarks.php"><i class="fa-regular fa-bookmark" style="color: #fee996;"></i> BOOKMARKS</a></li>
