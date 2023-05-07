@@ -21,11 +21,14 @@ if (isset($_GET["tri"]) && $_GET["tri"]== "visit") {
 }else if( isset($_GET["tri"]) && $_GET["tri"]== "bookmarks") {
     $recipes = $bookm->findAllOderedByBookmarks();
     $isbookmark = true;
-} else {
+}
+else if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
+    $recipes = $rep->findByCategory($_GET['categorie']);
+}
+else {
     $recipes = $rep->findAll();
 }
 ?>
-
 
     <?php
 

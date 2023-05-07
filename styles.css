@@ -478,7 +478,7 @@ nav a img {
 .plat {
   background-color: white;
   border: 1px solid gray;
-  min-height: 16em;
+  min-height: 1em;
   width: 30%;
   overflow: hidden;
   border-radius:10px;
