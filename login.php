@@ -12,7 +12,6 @@ if(isset($_GET["message"])) $message = $_GET["message"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipes | Login</title>
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
 </head>
 
@@ -30,11 +29,9 @@ if(isset($_GET["message"])) $message = $_GET["message"];
     <button type="submit">Log in</button>
     <br>
     <?php
-    if(isset($message)){ ?>
-        <div class="alert alert-danger" role="alert">
-            <?= $message ?>
-        </div>
-    <?php } ?>
+    if(isset($message))
+	 echo "<script type='text/javascript'>alert('$message');</script>";
+    ?>
     <br>
     <br>
     <br>

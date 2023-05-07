@@ -8,7 +8,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php if(isset($pageTitle)){echo $pageTitle;} else {echo 'Home';}?> </title>
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico">
     <script defer src="https://kit.fontawesome.com/79198b1732.js" crossorigin="anonymous"></script>
     <script defer src="scripts/bookmark.js"></script>
