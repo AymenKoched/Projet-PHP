@@ -1,10 +1,13 @@
 <?php
+$pageTitle = 'Recipes | Sign up';
+include 'requireGuest.php';
 include_once 'fragments/header.php';
 
-
-include 'requireGuest.php';
+if(isset($_GET["erreur"])) $erreur = $_GET["erreur"];
 ?>
+
 <form action="signupProcess.php" method="post">
+    <h2>Sign up</h2>
     <label for="name">Display Name</label>
     <input type="text" name="name" id="name" required />
     <label for="email">Email</label>
@@ -13,11 +16,9 @@ include 'requireGuest.php';
     <input type="password" name="password" id="password" minlength="8" required/>
     <button type="submit">Sign Up</button>
     <br>
-    <?php if(isset($_GET["erreur"])) { ?>
-    <div class="alert alert-danger" role="alert">
-        <?= $_GET["erreur"]?>
-    </div>
-    <?php } ?>
+    <?php if(isset($erreur))
+	 echo "<script type='text/javascript'>alert('$erreur');</script>";
+    ?>
 </form>
 <?php
 include_once 'fragments/footer.php'?>
