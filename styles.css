@@ -603,3 +603,15 @@ padding: 5px;
   transform: translateX(-1px);
   text-shadow: 1px 1px 1px gray;
 }
+footer{
+	font-size:large;
+}
+footer > p > a{
+	color:#0000FF;
+}
+footer > p > a:hover{
+	text-decoration:underline;
+}
+footer > p > a:visited{
+	color:#551A8B;
+}
