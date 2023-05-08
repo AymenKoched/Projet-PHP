@@ -24,17 +24,13 @@ if($mime_type === 'image'){
         $categories = "pas de categorie ";
     }
 
-    $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["my_image"]["name"]);
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-    move_uploaded_file($_FILES["my_image"]["tmp_name"], $target_file);
     $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie)
               VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);
     $statement->bindParam(':author', $author);
-    $file_get_contents = file_get_contents($target_file);
-    $statement->bindParam(':image', $file_get_contents);
+    $image = file_get_contents($_FILES["my_image"]["tmp_name"]);
+    $statement->bindParam(':image', $image);
     $statement->bindParam(':ingrediant', $ingrediant);
     $statement->bindParam(':etape', $etape);
     $statement->bindParam(':rating', $rating);
