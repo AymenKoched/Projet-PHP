@@ -10,8 +10,6 @@ $bookm = new BookmarkRepository("bookmarks");
 
 ?>
 
-
-
 <h5 class="dishes">Dishes</h5>
 <?php
 if(isset($_GET["categorie"])) { ?>
@@ -76,7 +74,6 @@ if (!$recipes) { ?>
                     </div>
                 </div>
             </div>
-            </div>
 
         <?php }  else  {  ?>
                 <div class="plat hide">
@@ -100,7 +97,6 @@ if (!$recipes) { ?>
                         <a href="details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
                     </div>
                 </div>
-            </div>
             </div>
         <?php } } ?>
     </ul>

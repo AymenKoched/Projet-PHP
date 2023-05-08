@@ -13,6 +13,14 @@ h1, h2, h3, h4 , h5, ul, li, a, p, input, label, button, div, footer{
   font-family: 'Quicksand', sans-serif;
   color: #444;
 }
+.button {
+  display: inline;
+  font-size: 25px;
+}
+.buttons {
+  text-align: center;
+  word-spacing: 20px;
+}
 ul{
   list-style-type: none;
 }
@@ -173,6 +181,7 @@ list-style-type: decimal;
   margin-bottom: 25px;
 }
 .details  .etapes li{
+  text-align: center;
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 15px;
@@ -181,7 +190,7 @@ list-style-type: decimal;
 
 
 .delete {
-  background-color: darkred;
+  background-color: rgb(255, 105, 84);
 }
 
 .delete a {
@@ -284,8 +293,10 @@ border : 1px solid #fee996;
   width: 60%;
   overflow: hidden;
   margin: auto;
-  height: 650px;
-  object-fit: cover;
+  height: 450px;
+  border: 1px solid rgb(246, 134, 86);
+  border-radius: 20px;
+  box-shadow:0 0 15px rgb(246, 134, 86);
 }
 .img-container img {
   width:100%;
@@ -322,7 +333,7 @@ border : 1px solid #fee996;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: darkred;
+  background: linear-gradient(135deg, rgb(243, 235, 232), rgb(238, 178, 140), rgb(246, 134, 86));
   left: -18px;
   top: -13px;
   z-index: -1;
@@ -347,14 +358,14 @@ border : 1px solid #fee996;
   color: white;
   background: linear-gradient(135deg, rgb(248, 197, 170), rgb(253, 103, 37));
   padding: 15px 10px;
-  transform: translate(-10%,-60%) skewY(-5deg);
+  transform: translate(-5%,-60%) skewY(-5deg);
 }
 
 .recIngre ,.how {
   margin-top: 60px !important;
   text-align: center;
   font-size: 35px;
-  color: darkred;
+  color: rgb(255, 134, 114);
 }
 nav a img {
   height: 100%;
