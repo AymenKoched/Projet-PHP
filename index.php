@@ -18,10 +18,13 @@ if(isset($_GET["categorie"])) { ?>
     <h3 class="cat-below-title">Of <?=$_GET["categorie"] ?> </h3>
 <?php } ?>
 
-<span class="order-by" style="font-family: sans-serif">Order By :</span>
-<a href="index.php?tri=visit" class="see" >Visits</a>
-<a href="index.php?tri=bookmarks"  class="see">Bookmarks</a>
-<a href="index.php" class="see">All</a>
+<div class="orderby" ><div class="title">Tap to Order Recipes by:</div>
+    <div class="order">
+        <a href="index.php?tri=visit" class="see" >Visits</a>
+        <a href="index.php?tri=bookmarks"  class="see">Bookmarks</a>
+        <a href="index.php"  class="see">All</a>
+    </div>
+</div>
 <?php
 $isbookmark = false;
 if (isset($_GET["tri"]) && $_GET["tri"]== "visit") {
