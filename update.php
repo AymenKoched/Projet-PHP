@@ -27,14 +27,10 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
 
     <label for="image">Image</label>
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
-    <input id="image-upload" type="file" name="my_image" value="<?=$DataUri?>" required>
-    <small class="form-text text-muted">Choose a JPG, JPEG or PNG image under 5 MB.</small>
-
-    <label for="rating">Rating</label>
-    <input id="rating"  type="number" name="rating" value="<?=$recipe->rating?>" required>
+    <input id="image-upload" type="file" name="my_image" accept="image/*">
 
     <label for="categories">Categories</label>
-    <select id="categories" name="categories"  required>
+    <select id="categories" name="categories">
         <option selected><?=$recipe->categorie?></option>
         <option value="Nabeul">Nabeul</option>
         <option value="Touzeur">Touzeur</option>

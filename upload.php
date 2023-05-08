@@ -10,7 +10,6 @@ if($upload->isImage()){
     $author = $_POST['author'];
     $ingrediant = $_POST['ingredients'];
     $etape = $_POST['etapes'];
-    $rating = $_POST['rating'];
 
     if (!empty($_POST['categories'])) {
         $categorie = $_POST['categories'];
@@ -21,8 +20,8 @@ if($upload->isImage()){
 
     $upload->compressImageIfPossible();
 
-    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie)
-              VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
+    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, categorie)
+              VALUES (:nom, :author, :image, :ingrediant, :etape, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);
     $statement->bindParam(':author', $author);
@@ -30,7 +29,6 @@ if($upload->isImage()){
     $statement->bindParam(':image', $image_blob);
     $statement->bindParam(':ingrediant', $ingrediant);
     $statement->bindParam(':etape', $etape);
-    $statement->bindParam(':rating', $rating);
     $statement->bindParam(':categorie', $categorie);
     $statement->execute();
     header("Location: index.php");

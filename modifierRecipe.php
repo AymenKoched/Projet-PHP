@@ -7,7 +7,6 @@ $nom = htmlentities($_POST['nom']);
 $author = htmlentities($_POST['author']);
 $ingrediants = htmlentities($_POST['ingrediants']);
 $etapes = htmlentities($_POST['etapes']);
-$rating = htmlentities($_POST['rating']);
 $categories = htmlentities($_POST['categories']);
 
 $params = array(
@@ -15,7 +14,6 @@ $params = array(
     'author' => $author,
     'ingrediants' => $ingrediants,
     'etapes' => $etapes,
-    'rating' => $rating,
     'categorie' => $categories,
 );
 

@@ -23,9 +23,6 @@ include 'requireAuthenticated.php';
     <label for="image">Image</label>
     <input id="image" type="file" name="my_image" accept="image/*" required>
 
-    <label for="rating">Rating</label>
-    <input id="rating"  type="number" name="rating" required>
-
     <label for="categories">Region</label>
     <select id="categories" name="categories" required>
         <option selected disabled>Open this select menu</option>
@@ -55,7 +52,7 @@ include 'requireAuthenticated.php';
         <option value="Tatouine">Tatouine</option>
     </select>
 
-    <button type="submit">DEPLOY</button>
+    <button type="submit">SUBMIT</button>
 
 </form>
 
