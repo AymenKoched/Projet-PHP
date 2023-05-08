@@ -2,6 +2,11 @@
 $pageTitle = 'Recipes | Add-Recipe';
 include 'fragments/header.php';
 include 'requireAuthenticated.php';
+
+if(isset($_SESSION["erreur"])){
+	$erreur = $_SESSION["erreur"];
+	unset($_SESSION["erreur"]);
+}
 ?>
 
 
@@ -21,7 +26,7 @@ include 'requireAuthenticated.php';
     <textarea id="etapes" name="etapes"></textarea>
 
     <label for="image">Image</label>
-    <input id="image" type="file" name="my_image" required>
+    <input id="image" type="file" name="my_image" accept="image/*" required>
 
     <label for="rating">Rating</label>
     <input id="rating"  type="number" name="rating" required>
@@ -61,6 +66,9 @@ include 'requireAuthenticated.php';
 
 
 <?php
+
+if(isset($erreur))
+    echo "<script type='text/javascript'>alert('$erreur');</script>";
 include 'fragments/footer.php';
 ?>
 
