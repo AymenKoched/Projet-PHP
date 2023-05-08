@@ -39,3 +39,10 @@ session_start();
         <?php  } ?>
     </ul>
 </nav>
+
+<?php
+if(isset($_SESSION["erreur"])){
+	$erreur = $_SESSION["erreur"];
+	unset($_SESSION["erreur"]);
+}
+?>

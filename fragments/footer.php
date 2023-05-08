@@ -3,5 +3,10 @@
 <!-- Either make the repo public or change the above link to a public mirror -->
 </footer>
 
+<?php
+if(isset($erreur))
+    echo "<script type='text/javascript'>alert('$erreur');</script>";
+?>
+
 </body>
 </html>

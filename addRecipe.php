@@ -2,11 +2,6 @@
 $pageTitle = 'Recipes | Add-Recipe';
 include 'fragments/header.php';
 include 'requireAuthenticated.php';
-
-if(isset($_SESSION["erreur"])){
-	$erreur = $_SESSION["erreur"];
-	unset($_SESSION["erreur"]);
-}
 ?>
 
 
@@ -64,11 +59,6 @@ if(isset($_SESSION["erreur"])){
 
 </form>
 
-
 <?php
-
-if(isset($erreur))
-    echo "<script type='text/javascript'>alert('$erreur');</script>";
 include 'fragments/footer.php';
 ?>
-

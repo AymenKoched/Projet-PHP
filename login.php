@@ -2,11 +2,6 @@
 $pageTitle = 'Recipes | Login';
 include 'requireGuest.php';
 include_once 'fragments/header.php';
-
-if(isset($_SESSION["erreur"])){
-	$erreur = $_SESSION["erreur"];
-	unset($_SESSION["erreur"]);
-}
 ?>
 
 <form action="loginProcess.php" method="post" enctype="multipart/form-data">
@@ -17,10 +12,6 @@ if(isset($_SESSION["erreur"])){
     <input type="password" name="password" id="password" required />
     <button type="submit">Log in</button>
     <br>
-    <?php
-    if(isset($erreur))
-	 echo "<script type='text/javascript'>alert('$erreur');</script>";
-    ?>
     <br>
     <br>
     <p>Don't have an account yet?<button><a href="signUp.php">Sign Up</a></button></p>
