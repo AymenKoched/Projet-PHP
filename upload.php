@@ -24,13 +24,25 @@ if($mime_type === 'image'){
         $categories = "pas de categorie ";
     }
 
+    $tmp_upload_path = $_FILES["my_image"]["tmp_name"];
+
+    //image compression
+    if(function_exists("imagecreatefrom$mime_subtype")){
+        //this value reduces the images' size about 4 times while not really affecting quality
+        $quality = 80;
+
+        $image = "imagecreatefrom$mime_subtype"($tmp_upload_path);
+	"image$mime_subtype"($image, $tmp_upload_path, $quality);
+	imagedestroy($image);
+    }
+
     $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, rating, categorie)
               VALUES (:nom, :author, :image, :ingrediant, :etape, :rating, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);
     $statement->bindParam(':author', $author);
-    $image = file_get_contents($_FILES["my_image"]["tmp_name"]);
-    $statement->bindParam(':image', $image);
+    $image_blob = file_get_contents($tmp_upload_path);
+    $statement->bindParam(':image', $image_blob);
     $statement->bindParam(':ingrediant', $ingrediant);
     $statement->bindParam(':etape', $etape);
     $statement->bindParam(':rating', $rating);
