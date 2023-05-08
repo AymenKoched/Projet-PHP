@@ -1,5 +1,4 @@
 <?php
-session_start();
 $pageTitle = 'Recipes | Login';
 include 'requireGuest.php';
 include_once 'fragments/header.php';

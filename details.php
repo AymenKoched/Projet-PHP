@@ -31,12 +31,12 @@ $rep= new BookmarkRepository('bookmarks');
 
         <?php if(!isset($_SESSION["user"])) { ?>
         <div class="time" style="width: 100%">
-            <i class="fa-regular fa-clock" style="color: darkred;"></i>
+            <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
             45 MINUTES
         </div>
         <?php } else { ?>
         <div class="time">
-            <i class="fa-regular fa-clock" style="color: darkred;"></i>
+            <i class="fa-regular fa-clock" style="color:#f59f7b;"></i>
             45 MINUTES
         </div>
         <?php } ?>
@@ -58,7 +58,6 @@ $rep= new BookmarkRepository('bookmarks');
         </div>
         <?php } ?>
     </div>
-
     <h5 class="recIngre">RECIPE INGREDIENTS</h5>
     <ul class="ingrediants">
         <?php
@@ -67,12 +66,11 @@ $rep= new BookmarkRepository('bookmarks');
         foreach ($ingrediants as $element){
             if ($element != ""){ ?>
                 <div class="list-item">
-                    <i class="fa-solid fa-check" style="color: #FEE996;"></i>
+                    <i class="fa-solid fa-check" style="color: #dbb1aa;"></i>
                     <li> <?= $element ?> </li>
                 </div>
         <?php }} ?>
     </ul>
-
     <h5 class="how">HOW TO COOK IT</h5>
     <ul class="etapes">
         <?php
@@ -83,17 +81,18 @@ $rep= new BookmarkRepository('bookmarks');
              <li><?= $etape ?></li>
         <?php }} ?>
     </ul>
-    <h5>Categorie: <?= $recipe->categorie ?></h5>
-    <h5>Rating: <?= $recipe->rating?></h5>
-    <p>By <?= $recipe->author?></p>
+    <h5 style="text-align: center; margin-top: 120px ; font-size: 25px"><span style="color: rgb(255, 105, 84);">Categorie :</span> <?= $recipe->categorie ?></h5>
+    <h5 style="text-align: center;font-size: 25px;"><span style="color: rgb(255, 105, 84);">Rating : </span><?= $recipe->rating?></h5>
+    <p style="text-align: center; margin-top: 50px ; font-size: 28px"  >By <?= $recipe->author?></p>
 </div>
-
 <?php
 if(isset($_SESSION['name'])){
     if($_SESSION['name'] === $recipe->author){ ?>
-        <button><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
-        <button class="delete"><a href="deleteRecipesProcess.php?id=<?= $recipe->id;?>">Delete</a></button>
-<?php
+        <div class="buttons">
+        <button class="button"><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
+        <button class="delete button"><a href="deleteRecipesProcess.php?id=<?= $recipe->id;?>">Delete</a></button>
+        </div>
+            <?php
     }
 }
 ?>

@@ -13,6 +13,14 @@ h1, h2, h3, h4 , h5, ul, li, a, p, input, label, button, div, footer{
   font-family: 'Quicksand', sans-serif;
   color: #444;
 }
+.button {
+  display: inline;
+  font-size: 25px;
+}
+.buttons {
+  text-align: center;
+  word-spacing: 20px;
+}
 ul{
   list-style-type: none;
 }
@@ -173,6 +181,7 @@ list-style-type: decimal;
   margin-bottom: 25px;
 }
 .details  .etapes li{
+  text-align: center;
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 15px;
@@ -181,7 +190,7 @@ list-style-type: decimal;
 
 
 .delete {
-  background-color: darkred;
+  background-color: rgb(255, 105, 84);
 }
 
 .delete a {
@@ -284,8 +293,10 @@ border : 1px solid #fee996;
   width: 60%;
   overflow: hidden;
   margin: auto;
-  height: 650px;
-  object-fit: cover;
+  height: 450px;
+  border: 1px solid rgb(246, 134, 86);
+  border-radius: 20px;
+  box-shadow:0 0 15px rgb(246, 134, 86);
 }
 .img-container img {
   width:100%;
@@ -322,7 +333,7 @@ border : 1px solid #fee996;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: darkred;
+  background: linear-gradient(135deg, rgb(243, 235, 232), rgb(238, 178, 140), rgb(246, 134, 86));
   left: -18px;
   top: -13px;
   z-index: -1;
@@ -345,16 +356,16 @@ border : 1px solid #fee996;
   margin: auto;
   font-size: 45px;
   color: white;
-  background: linear-gradient(135deg, #FEE996, darkred);
+  background: linear-gradient(135deg, rgb(248, 197, 170), rgb(253, 103, 37));
   padding: 15px 10px;
-  transform: translate(-10%,-60%) skewY(-5deg);
+  transform: translate(-5%,-60%) skewY(-5deg);
 }
 
 .recIngre ,.how {
   margin-top: 60px !important;
   text-align: center;
   font-size: 35px;
-  color: darkred;
+  color: rgb(255, 134, 114);
 }
 nav a img {
   height: 100%;
@@ -499,6 +510,7 @@ nav a img {
 
 .plat-img {
   width:50%;
+  border-right: 1px solid black;
 }
 
 .plat:hover .plat-img {
@@ -520,10 +532,10 @@ nav a img {
   margin-bottom: 30px;
   font-size: 25px;
 }
-.plat-author , .plat-admiration {
+.plat-author , .plat-admiration, .plat-visitors  {
   margin-bottom: 0;
 }
-.plat-description{
+.plat-region , .plat-description{
   margin-bottom: 35px;
 }
 /*footer{
@@ -540,12 +552,10 @@ nav a img {
 }
 
 .see {
-padding: 5px;
+  padding-inline: 10px;
+  padding-block: 5px;
   background-color: #ffd255;
   border-radius: 5px;
-}
-.plat-visitors {
-  margin-bottom: 10px;
 }
 .team-introduction
 {
@@ -615,3 +625,92 @@ footer > p > a:hover{
 footer > p > a:visited{
 	color:#551A8B;
 }
+
+.cat-below-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.hide{
+  display: none;
+}
+.below{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.below div {
+  width: fit-content;
+  background : linear-gradient(135deg, rgb(138, 138, 138), rgb(0, 0, 0));
+  padding: 6px 15px;
+  margin-right: 7.5px;
+  box-shadow: 0px 12px 100px #d0e5fe;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+.below div a {
+  text-decoration: none;
+}
+.below .prv:hover , .below .next:hover {
+  cursor: pointer;
+}
+
+.orderby {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 13px;
+}
+
+.order {
+  display: flex;
+  margin-top: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.order a {
+  padding: 20px;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.order a::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.order a:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.order a:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.orderby .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  animation: anim-text 2s ease-out infinite;
+}
+
