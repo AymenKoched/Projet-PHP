@@ -5,7 +5,7 @@
 
 <?php
 if(isset($erreur))
-    echo "<script type='text/javascript'>alert('$erreur');</script>";
+    echo "<script type='text/javascript'>alert(\"$erreur\");</script>";
 ?>
 
 </body>
