@@ -6,7 +6,7 @@ let tr = document.querySelectorAll(".plat");
 function ascend(){
     //el for hathy bech yaffichi ell ba3dhom
     if (tr !== null && tr !== undefined) { // estar hatha mouhem barcha barcha barcha
-        for (let i = (x-1)*9; i < x*9 && i < tr.length; i++) { // el 7aja elmouhem hna houwa ennou zedna i< tr.length w hathy 7aja mouhema barcha barcha
+        for (let i = (x-1)*9 ; i < x*9 && i < tr.length; i++) { // el 7aja elmouhem hna houwa ennou zedna i< tr.length w hathy 7aja mouhema barcha barcha
             tr[i].classList.toggle('hide');// elfaza mta3 ennk tna7i classes w tzid classe MOUCH 3ADIYA ****************************************************************
         }
     }
@@ -40,7 +40,7 @@ function condition(){
     btn.innerHTML = `${x}`;
 }
 next.addEventListener("click", function() {
-    if(x*4< tr.length){
+    if(x*9< tr.length){
         x++;
         condition();//tzid el compteur mta3 el page
         ascend();
