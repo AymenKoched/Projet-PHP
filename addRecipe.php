@@ -14,10 +14,10 @@ include 'requireAuthenticated.php';
     <label for="author">Author</label>
     <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
 
-    <label for="ingredients">Ingrédients (separate with '-')</label>
+    <label for="ingredients">Ingredients (separated with new lines)</label>
     <textarea id="ingredients" name="ingredients"></textarea>
 
-    <label for="etapes">Etapes (separate with '-')</label>
+    <label for="etapes">Steps (separated with new lines)</label>
     <textarea id="etapes" name="etapes"></textarea>
 
     <label for="image">Image</label>

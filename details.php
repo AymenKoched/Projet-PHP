@@ -61,7 +61,7 @@ $rep= new BookmarkRepository('bookmarks');
     <h5 class="recIngre">RECIPE INGREDIENTS</h5>
     <ul class="ingrediants">
         <?php
-        $ingrediants = explode('-', $recipe->ingrediants);
+        $ingrediants = preg_split('/\r\n|\r|\n/', $recipe->ingrediants);
         $ingrediants = array_map('trim', $ingrediants);
         foreach ($ingrediants as $element){
             if ($element != ""){ ?>
@@ -74,7 +74,7 @@ $rep= new BookmarkRepository('bookmarks');
     <h5 class="how">HOW TO COOK IT</h5>
     <ul class="etapes">
         <?php
-        $etapes = explode('-', $recipe->etapes);
+        $etapes = preg_split('/\r\n|\r|\n/', $recipe->etapes);
         $etapes = array_map('trim', $etapes);
         foreach ($etapes as $etape){
             if ($etape !="" ) { ?>
