@@ -12,6 +12,13 @@ class CommentRepository extends Repository
         $reponse->execute([$recipeId]);
         return $reponse->fetchAll(PDO::FETCH_OBJ);
     }
+    public function findNumberByRecipeId($recipeId){
+        $requete = "select count(*) from $this->tableName group by RecipeId having RecipeId = ?";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$recipeId]);
+        return $reponse->fetchColumn();
+    }
+
 
     public function isLikedByUser($comment_id, $user_id) {
         $comment = $this->findById($comment_id);

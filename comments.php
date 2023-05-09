@@ -1,5 +1,14 @@
 <div class="comment_container">
-    <h3>Comments </h3>
+    <?php include_once ("CommentRepository.php");
+    $rep = new CommentRepository("comment");
+    ?>
+
+    <?php if ($rep->findNumberByRecipeId($recipe->id)) { ?>
+    <h3>Comments - <?= ($rep->findNumberByRecipeId($recipe->id)) ?></h3>
+        <?php } else { ?>
+         <h3>Comments - 0 </h3>
+         <?php } ?>
+
     <?php
     include_once ("CommentRepository.php");
     $rep = new CommentRepository("comment");
