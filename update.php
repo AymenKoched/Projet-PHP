@@ -10,7 +10,7 @@ $recipe = $rep->findById($id);
 $image = $recipe->image;
 $DataUri='data:image/jpeg;base64,' . base64_encode($image)
 ?>
-<form action="modifierRecipe.php" method="post" enctype="multipart/form-data">
+<form action="modifierRecipe.php" method="post" enctype="multipart/form-data" class="recipe-form">
     <h2>Update Recipe</h2>
 
     <label for="title">Recipe Name</label>

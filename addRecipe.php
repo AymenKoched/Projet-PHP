@@ -5,7 +5,7 @@ include 'requireAuthenticated.php';
 ?>
 
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload.php" method="post" enctype="multipart/form-data" class="recipe-form">
     <h2>Add Recipe</h2>
 
     <label for="title">Recipe Name</label>
