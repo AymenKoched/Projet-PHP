@@ -8,7 +8,7 @@ include 'requireAuthenticated.php';
 <form action="upload.php" method="post" enctype="multipart/form-data">
     <h2>Add Recipe</h2>
 
-    <label for="title">Nom</label>
+    <label for="title">Recipe Name</label>
     <input type="text" name="nom" id="title" required />
 
     <label for="author">Author</label>
