@@ -6,8 +6,6 @@ require_once 'RecipesRepository.php';
 require_once 'BookmarkRepository.php';
 $rep = new RecipesRepository('recipes');
 $bookm = new BookmarkRepository("bookmarks");
-
-
 ?>
 
 <h5 class="dishes">Dishes</h5>
@@ -16,6 +14,7 @@ if(isset($_GET["categorie"])) { ?>
     <h3 class="cat-below-title">Of <?=$_GET["categorie"] ?> </h3>
 <?php } ?>
 
+<?php if(!isset($_GET["categorie"])) { ?>
 <div class="orderby" ><div class="title">Tap to Order Recipes by:</div>
     <div class="order">
         <a href="index.php?tri=visit" class="see" >Visits</a>
@@ -23,6 +22,8 @@ if(isset($_GET["categorie"])) { ?>
         <a href="index.php"  class="see">All</a>
     </div>
 </div>
+<?php } ?>
+
 <?php
 $isbookmark = false;
 if (isset($_GET["tri"]) && $_GET["tri"]== "visit") {
