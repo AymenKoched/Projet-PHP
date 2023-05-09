@@ -20,10 +20,10 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <input type="text" name="author" id="author" value="<?=$recipe->author?>" required />
 
     <label for="ingredients">Ingredients (separated with new lines)</label>
-    <textarea id="ingredients" name="ingrediants"><?=$recipe->ingrediants?></textarea>
+    <textarea id="ingredients" name="ingrediants" rows="10"><?=$recipe->ingrediants?></textarea>
 
     <label for="etapes">Steps (separated with new lines)</label>
-    <textarea id="etapes" name="etapes"><?=$recipe->etapes?></textarea>
+    <textarea id="etapes" name="etapes" rows="10"><?=$recipe->etapes?></textarea>
 
     <label for="image">Image</label>
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">

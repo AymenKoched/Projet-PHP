@@ -15,10 +15,10 @@ include 'requireAuthenticated.php';
     <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
 
     <label for="ingredients">Ingredients (separated with new lines)</label>
-    <textarea id="ingredients" name="ingredients"></textarea>
+    <textarea id="ingredients" name="ingredients" rows="10"></textarea>
 
     <label for="etapes">Steps (separated with new lines)</label>
-    <textarea id="etapes" name="etapes"></textarea>
+    <textarea id="etapes" name="etapes" rows="10"></textarea>
 
     <label for="image">Image</label>
     <input id="image" type="file" name="my_image" accept="image/*" required>
