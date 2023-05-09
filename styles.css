@@ -614,7 +614,7 @@ nav a img {
 }
 #nav-bar li a:hover  {
   transform: translateX(-1px);
-  text-shadow: 1px 1px 1px gray;
+  text-shadow: 1px 1px 1px #ffc059;
 }
 footer{
 	font-size:large;
