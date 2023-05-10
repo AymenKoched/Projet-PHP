@@ -457,12 +457,6 @@ nav a img {
   border-color: #eec600;
   background: linear-gradient(375deg, transparent, transparent);
 }
-
-
-
-
-
-
 .rootReactVNB {
   display:none !important;
 }
@@ -716,4 +710,22 @@ footer > p > a:visited{
   color: #333;
   animation: anim-text 2s ease-out infinite;
 }
-
+footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 50px 0;
+}
+.logo {
+  display: inline-block;
+  width: 150px;
+  margin-bottom: 20px;
+}
+.contact {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.contact span {
+  display: block;
+  margin-bottom: 5px;
+}
