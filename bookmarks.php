@@ -5,7 +5,6 @@ require_once 'BookmarkRepository.php';
 require_once 'RecipesRepository.php';
 $email = $_SESSION['user'];
 
-
 $req= new BookmarkRepository("bookmarks");
 $recipesIDs = $req->findRecipeByEmail($email);
 
@@ -33,7 +32,6 @@ if (!$recipesIDs) { ?>
             <p class="plat-visitors"><strong>Visits Overall</strong> :
                 <?= $recipe->visits ?>
             </p>
-
             <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
             <div class="plat-details">
                 <a href="details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
@@ -45,7 +43,5 @@ if (!$recipesIDs) { ?>
     </ul>
     <?php
 }
-
-
 include 'fragments/footer.php';
 ?>

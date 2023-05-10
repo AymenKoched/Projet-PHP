@@ -18,7 +18,7 @@ class RecipesRepository extends Repository
         $query = "SELECT * FROM {$this->tableName} WHERE nom LIKE ?";
         $stmt = $this->cnxPDO->prepare($query);
         $stmt->execute(['%' . $name . '%']);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
     public function findByCategory($categorie)
     {
