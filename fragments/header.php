@@ -12,6 +12,7 @@ session_start();
     <script defer src="https://kit.fontawesome.com/79198b1732.js" crossorigin="anonymous"></script>
     <script defer src="scripts/bookmark.js"></script>
     <script defer src="scripts/seeAll.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>

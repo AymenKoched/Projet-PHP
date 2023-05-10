@@ -70,7 +70,7 @@ if (!$recipes) { ?>
                 ?>
             <div class="plat">
                 <div class="plat-img">
-                    <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" alt="recipe img">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" object-fit="cover"; alt="recipe img">
                 </div>
                 <div class="plat-info">
                     <p class="plat-name"><strong><?= strtoupper($recipe->nom); ?> </strong></p>

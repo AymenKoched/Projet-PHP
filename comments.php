@@ -47,7 +47,7 @@
 
 
                 <!--Comment Likes-->
-                <div>Likes <?php echo $comment->Likes ?></div>
+                <div id="nbr_likes_<?php echo $comment->id ?>">Likes <?php echo $comment->Likes ?></div>
 
                 <!--Delete Comment-->
                 <?php
@@ -68,9 +68,9 @@
 
                     if ($liked) {
                 ?>
-                <a href="LikeProcess.php?comment_id=<?php echo $comment->id?>"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <a class="liked"  data-comment-id="<?php echo $comment->id ?>"><img src="heartLike.ico" width="20px" height="20px"></a>
                 <?php } else { ?>
-                <a href="LikeProcess.php?comment_id=<?php echo $comment->id?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
+                <a class="unliked"  data-comment-id="<?php echo $comment->id ?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
                 <?php } }?>
             </div>
             </div>
@@ -99,3 +99,31 @@ if(isset($_SESSION["name"]))
 <?php
 }
 ?>
+
+<<script type="text/javascript">
+    $(document).ready(function(){
+        $('.liked, .unliked').click(function(){
+            var commentId = $(this).data('comment-id');
+            var isLiked = $(this).hasClass('liked');
+            var clickedElement = $(this);
+            $.ajax({
+                type: 'POST',
+                url: 'LikeProcess.php',
+                data: { comment_id: commentId, is_liked: isLiked },
+                success: function(data){
+                    var updatedLikes = parseInt(data.likes);
+                    $('#nbr_likes_' + commentId).text('Likes ' + updatedLikes);
+                    if (isLiked) {
+                        clickedElement.removeClass('liked').addClass('unliked');
+                        clickedElement.html('<img src="heart%20empty.ico" width="20px" height="20px">');
+                    } else {
+                        clickedElement.removeClass('unliked').addClass('liked');
+                        clickedElement.html('<img src="heartLike.ico" width="20px" height="20px">');
+                    }
+
+                }
+            });
+        });
+    });
+</script>
+
