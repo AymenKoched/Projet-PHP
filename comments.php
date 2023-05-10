@@ -17,23 +17,34 @@
     ?>
 
         <div class="comment_card">
+            <div style="display: flex;justify-content: flex-start;gap: 15px;">
+                <div><i class="fa-solid fa-user" style="color: #4b5061;font-size: 50px;"></i></div>
+                <div>
+                    <?php
+                    if (isset($_SESSION["name"])){
+                        if ($_SESSION["name"] == $comment->author) { ?>
+                            <div >You</div>
+                            <?php
+                        } else { ?>
+                            <div><?php echo $comment->author ?></div>
+                        <?php }
+                    } else { ?>
+                        <div><?php echo $comment->author ?></div>
+                    <?php } ?>
+                <p><?php echo $comment->text ?></p>
+                </div>
+            </div>
+    <div class="comment_footer">
 
-            <p><?php echo $comment->text ?></p>
-            <div class="comment_footer">
+
+
 
                 <!--Comment Author-->
-                <?php
-                if (isset($_SESSION["name"])){
-                    if ($_SESSION["name"] == $comment->author) { ?>
-                        <div>By You</div>
-                    <?php
-                    } else { ?>
-                     <div>By <?php echo $comment->author ?></div>
 
-                    <?php }
-                        } else { ?>
-                    <div>By <?php echo $comment->author ?></div>
-                <?php } ?>
+
+
+
+
 
                 <!--Comment Likes-->
                 <div>Likes <?php echo $comment->Likes ?></div>
