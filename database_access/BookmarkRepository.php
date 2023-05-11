@@ -41,4 +41,9 @@ class BookmarkRepository extends Repository
         return $reponse->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function DeleteByRecipeId($id){
+        $requete = "delete from $this->tableName where recipeID = ?";
+        $reponse = $this->cnxPDO->prepare($requete);
+        $reponse->execute([$id]);
+    }
 }
