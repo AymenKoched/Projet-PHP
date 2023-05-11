@@ -13,10 +13,10 @@ include 'fragments/header.php';
 <div class="team-container">
     <div class="member 1">
         <div class="card front-face">
-            <img src="contributors/img.png" alt="Flip Card">
+            <img src="contributors/img.jpg" alt="Flip Card">
         </div>
         <div class="card back-face">
-            <img src="contributors/img.png" alt="Flip Card">
+            <img src="contributors/img.jpg" alt="Flip Card">
             <div class="info">
                 <div class="title">Mohamed Habib Triki</div>
                 <p>Software engineering student</p>
@@ -29,10 +29,10 @@ include 'fragments/header.php';
     </div>
     <div class="member 2">
         <div class="card front-face">
-            <img src="contributors/img_1.png" alt="Flip Card">
+            <img src="contributors/img_1.jpg" alt="Flip Card">
         </div>
         <div class="card back-face">
-            <img src="contributors/img_1.png" alt="Flip Card">
+            <img src="contributors/img_1.jpg" alt="Flip Card">
             <div class="info">
                 <div class="title">Aymen Koched</div>
                 <p>Software engineering student</p>
@@ -61,25 +61,25 @@ include 'fragments/header.php';
     </div>
     <div class="member 4">
         <div class="card front-face">
-            <img src="contributors/img_2.png" alt="Flip Card">
+            <img src="contributors/img_2.jpg" alt="Flip Card">
         </div>
         <div class="card back-face">
-            <img src="contributors/img_2.png" alt="Flip Card">
+            <img src="contributors/img_2.jpg" alt="Flip Card">
             <div class="info">
                 <div class="title">Mohamed Yessine Ellini </div>
                 <p>Software engineering student</p>
             </div>
             <ul>
-                <a href="mohamed yassine.ellini@insat.ucar.tn"><i class="fab fa-google"></i></a>
+                <a href="mailto:mohamedyessine.ellini@insat.ucar.tn"><i class="fab fa-google"></i></a>
             </ul>
         </div>
     </div>
     <div class="member 5">
         <div class="card front-face">
-            <img src="contributors/img_3.png" alt="Flip Card">
+            <img src="contributors/img_3.jpg" alt="Flip Card">
         </div>
         <div class="card back-face">
-            <img src="contributors/img_3.png" alt="Flip Card">
+            <img src="contributors/img_3.jpg" alt="Flip Card">
             <div class="info">
                 <div class="title">Mohamed Zini</div>
                 <p>Software engineering student</p>
