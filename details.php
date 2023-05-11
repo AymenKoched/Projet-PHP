@@ -81,8 +81,11 @@ $rep= new BookmarkRepository('bookmarks');
              <li><?= $etape ?></li>
         <?php }} ?>
     </ul>
-    <h5 style="text-align: center; margin-top: 120px ; font-size: 25px"><span style="color: rgb(255, 105, 84);">Region :</span> <?= $recipe->categorie ?></h5>
-
+   
+   <?php
+	if (isset($recipe->categorie))
+            echo   '<h5 style="text-align: center; margin-top: 120px ; font-size: 25px"><span style="color: rgb(255, 105, 84);">Region :</span> <?= $recipe->categorie ?></h5>';
+   ?>
     <p style="text-align: center; margin-top: 50px ; font-size: 28px"  >By <?= $recipe->author?></p>
 </div>
 <?php
