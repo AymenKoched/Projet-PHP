@@ -26,6 +26,9 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <label for="etapes">Steps (separated with new lines)</label>
     <textarea id="etapes" name="etapes" rows="10"><?=$recipe->etapes?></textarea>
 
+    <label for="cooktime">Cooking time (minutes)</label>
+    <input type="number" name="cooktime" id="cooktime" required>
+
     <label for="image">Image</label>
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
     <input id="image-upload" type="file" name="my_image" accept="image/*">

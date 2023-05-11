@@ -32,12 +32,12 @@ $rep= new BookmarkRepository('bookmarks');
         <?php if(!isset($_SESSION["user"])) { ?>
         <div class="time" style="width: 100%">
             <i class="fa-regular fa-clock" style="color: #f59f7b;"></i>
-            45 MINUTES
+	    <?=$recipe->cooktime?> MINUTES
         </div>
         <?php } else { ?>
         <div class="time">
             <i class="fa-regular fa-clock" style="color:#f59f7b;"></i>
-            45 MINUTES
+            <?=$recipe->cooktime?> MINUTES
         </div>
         <?php } ?>
 

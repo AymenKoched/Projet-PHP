@@ -8,6 +8,7 @@ $nom = htmlentities($_POST['nom']);
 $author = htmlentities($_POST['author']);
 $ingrediants = htmlentities($_POST['ingrediants']);
 $etapes = htmlentities($_POST['etapes']);
+$cooktime = htmlentities($_POST['cooktime']);
 $categories = htmlentities($_POST['categories']);
 
 $params = array(
@@ -15,6 +16,7 @@ $params = array(
     'author' => $author,
     'ingrediants' => $ingrediants,
     'etapes' => $etapes,
+    'cooktime' => $cooktime,
     'categorie' => $categories,
 );
 
@@ -33,6 +35,7 @@ if(file_exists($tmp_upload_path)
         $_SESSION["erreur"] = "You uploaded an invalid image. Other modifications will still take effect.";
     }
 }
+
 require_once ('database_access/RecipesRepository.php');
 $rep= new RecipesRepository("recipes");
 $recipe = $rep->UpdateById($id,$params);

@@ -21,10 +21,13 @@ include 'authentication/requireAuthenticated.php';
     <label for="etapes">Steps (separated with new lines)</label>
     <textarea id="etapes" name="etapes" rows="10"></textarea>
 
+    <label for="cooktime">Cooking time (minutes)</label>
+    <input type="number" name="cooktime" id="cooktime" required>
+
     <label for="image">Image</label>
     <input id="image" type="file" name="my_image" accept="image/*" required>
 
-    <label for="categories">Region</label>
+    <label for="categories">Region (optional)</label>
     <select id="categories" name="categories" required>
         <option selected disabled>Open this select menu</option>
         <option value="Béja">Béja</option>
