@@ -9,5 +9,3 @@ $rep=new CommentRepository("comment");
 
 $rep->DeleteById($comment_id);
 
-$previousPage = $_SERVER['HTTP_REFERER'];
-header("Location: $previousPage");

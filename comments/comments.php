@@ -55,7 +55,7 @@
                 <?php
                 if (isset($_SESSION["name"])) {
                     if ($_SESSION["name"] == $comment->author) { ?>
-                        <a href="/comments/DeleteCommnetprocess.php?comment_id=<?php echo $comment->id?>"><img src="/assets/delete_icon.ico" width="20px" height="20px"></a>
+                        <a class="delete-comment" data-comment-id="<?php echo $comment->id ?>"><img src="/assets/delete_icon.ico" width="20px" height="20px"></a>
                 <?php
                     }
                 }
@@ -126,6 +126,34 @@ if(isset($_SESSION["name"]))
                 }
             });
         });
+        $('.delete-comment').click(function(){
+            var commentId = $(this).data('comment-id');
+            var clickedElement = $(this);
+            $.ajax({
+                type: 'GET',
+                url: '/comments/DeleteCommnetprocess.php',
+                data: { comment_id: commentId },
+                success: function(){
+                    clickedElement.parent().remove();
+                }
+            });
+        });
+
     });
 </script>
+
+<style>
+    .liked:hover,
+    .unliked:hover,
+    .delete-comment:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+
+    .liked img,
+    .unliked img {
+        width: 25px;
+        height: 25px;
+    }
+</style>
 

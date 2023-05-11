@@ -643,23 +643,26 @@ footer > p > a:visited{
   justify-content: center;
 }
 .below div {
-  width: fit-content;
-  background : linear-gradient(135deg, rgb(138, 138, 138), rgb(0, 0, 0));
-  padding: 6px 15px;
-  margin-right: 7.5px;
-  box-shadow: 0px 12px 100px #d0e5fe;
-  border-radius: 5px;
-  font-size: 25px;
-  font-weight: 600;
-  color: white;
-}
-.below div a {
   text-decoration: none;
-}
-.below .prv:hover , .below .next:hover {
-  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px;
 }
 
+.below .prv:hover , .below .next:hover {
+  cursor: pointer;
+  background-color: #ddd;
+  color: black;
+
+}
+.prv {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #000000;
+  color: white;
+}
 .orderby {
   display: flex;
   flex-direction: column;

@@ -117,9 +117,9 @@ if (!$recipes) { ?>
         <?php } } ?>
     </ul>
     <div class="below">
-        <div class="prv"> << </div>
+        <div class="prv"> &laquo; Previous</div>
         <div class="nbr">1</div>
-        <div class="next"> >> </div>
+        <div class="next">Next &raquo;</div>
     </div>
     <?php
 }
