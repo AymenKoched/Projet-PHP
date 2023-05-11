@@ -1,31 +1,38 @@
 <?php
-$pageTitle = 'Recipes | Add-Recipe';
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+$pageTitle = 'Recipes | Update-Recipe';
 include 'fragments/header.php';
-include 'requireAuthenticated.php';
+
+$id = htmlentities($_GET['id']);
+
+require_once ('database_access/RecipesRepository.php');
+$rep= new RecipesRepository("recipes");
+$recipe = $rep->findById($id);
+$image = $recipe->image;
+$DataUri='data:image/jpeg;base64,' . base64_encode($image)
 ?>
-
-
-<form action="upload.php" method="post" enctype="multipart/form-data" class="recipe-form">
-    <h2>Add Recipe</h2>
+<form action="updateRecipeProcess.php" method="post" enctype="multipart/form-data" class="recipe-form">
+    <h2>Update Recipe</h2>
 
     <label for="title">Recipe Name</label>
-    <input type="text" name="nom" id="title" required />
+    <input type="text" name="nom" id="title" value="<?=$recipe->nom?>" required />
 
     <label for="author">Author</label>
-    <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
+    <input type="text" name="author" id="author" value="<?=$recipe->author?>" required />
 
     <label for="ingredients">Ingredients (separated with new lines)</label>
-    <textarea id="ingredients" name="ingredients" rows="10"></textarea>
+    <textarea id="ingredients" name="ingrediants" rows="10"><?=$recipe->ingrediants?></textarea>
 
     <label for="etapes">Steps (separated with new lines)</label>
-    <textarea id="etapes" name="etapes" rows="10"></textarea>
+    <textarea id="etapes" name="etapes" rows="10"><?=$recipe->etapes?></textarea>
 
     <label for="image">Image</label>
-    <input id="image" type="file" name="my_image" accept="image/*" required>
+    <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
+    <input id="image-upload" type="file" name="my_image" accept="image/*">
 
     <label for="categories">Region</label>
-    <select id="categories" name="categories" required>
-        <option selected disabled>Open this select menu</option>
+    <select id="categories" name="categories">
+        <option selected><?=$recipe->categorie?></option>
         <option value="Nabeul">Nabeul</option>
         <option value="Touzeur">Touzeur</option>
         <option value="Manubah">Manubah</option>
@@ -52,10 +59,13 @@ include 'requireAuthenticated.php';
         <option value="Tatouine">Tatouine</option>
     </select>
 
-    <button type="submit">SUBMIT</button>
+    <input hidden="hidden" name="id" type="number" class="form-control" value="<?=$recipe->id?>" >
 
+    <button type="submit">Update</button>
 </form>
+
 
 <?php
 include 'fragments/footer.php';
 ?>
+

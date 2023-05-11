@@ -1,8 +1,9 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 $pageTitle = 'Bookmarks';
 include 'fragments/header.php';
-require_once 'BookmarkRepository.php';
-require_once 'RecipesRepository.php';
+require_once 'database_access/BookmarkRepository.php';
+require_once 'database_access/RecipesRepository.php';
 $email = $_SESSION['user'];
 
 $req= new BookmarkRepository("bookmarks");
@@ -34,7 +35,7 @@ if (!$recipesIDs) { ?>
             </p>
             <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
             <div class="plat-details">
-                <a href="details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
+                <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
             </div>
         </div>
         </div>

@@ -1,6 +1,7 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 session_start();
-require_once('ConnexionPDO.php');
+require_once('database_access/ConnexionPDO.php');
 require_once('UploadedFile.php');
 
 $upload = new UploadedFile($_FILES["my_image"]["tmp_name"]);
@@ -31,7 +32,7 @@ if($upload->isImage()){
     $statement->bindParam(':etape', $etape);
     $statement->bindParam(':categorie', $categorie);
     $statement->execute();
-    header("Location: index.php");
+    header("Location: /index.php");
 
 }
 else{

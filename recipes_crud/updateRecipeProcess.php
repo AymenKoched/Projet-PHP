@@ -1,4 +1,5 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 session_start();
 require_once('UploadedFile.php');
 
@@ -32,8 +33,8 @@ if(file_exists($tmp_upload_path)
         $_SESSION["erreur"] = "You uploaded an invalid image. Other modifications will still take effect.";
     }
 }
-require_once ('RecipesRepository.php');
+require_once ('database_access/RecipesRepository.php');
 $rep= new RecipesRepository("recipes");
 $recipe = $rep->UpdateById($id,$params);
 
-header("Location: index.php");
+header("Location: /index.php");

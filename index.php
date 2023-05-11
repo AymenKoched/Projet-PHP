@@ -2,8 +2,8 @@
 $pageTitle = 'Recipes | Home';
 include 'fragments/header.php';
 
-require_once 'RecipesRepository.php';
-require_once 'BookmarkRepository.php';
+require_once 'database_access/RecipesRepository.php';
+require_once 'database_access/BookmarkRepository.php';
 $rep = new RecipesRepository('recipes');
 $bookm = new BookmarkRepository("bookmarks");
 ?>
@@ -86,7 +86,7 @@ if (!$recipes) { ?>
                     </p>
                     <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
                     <div class="plat-details">
-                        <a href="details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
+                        <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ if (!$recipes) { ?>
                         </p>
                         <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
                         <div class="plat-details">
-                        <a href="details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
+                        <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
                         </div>
                 </div>
             </div>

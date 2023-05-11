@@ -1,4 +1,5 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 session_start();
 
 // Check if the request is a POST request
@@ -8,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = $_SESSION['user'];
 
     // Update the likes count and liked_by property of the comment
-    include_once("CommentRepository.php");
+    include_once("database_access/CommentRepository.php");
     $rep = new CommentRepository("comment");
     $comment = $rep->findById($commentId);
     $likedBy = $comment->Likers ? explode(',', $comment->Likers) : [];

@@ -1,10 +1,10 @@
 <?php
 $pageTitle = 'Recipes | Details';
 include 'fragments/header.php';
-include_once 'BookmarkRepository.php';
+include_once 'database_access/BookmarkRepository.php';
 $id = htmlentities($_GET['id']);
 
-require_once ('RecipesRepository.php');
+require_once ('database_access/RecipesRepository.php');
 $rep= new RecipesRepository("recipes");
 $recipe = $rep->findById($id);
 
@@ -49,10 +49,10 @@ $rep= new BookmarkRepository('bookmarks');
             <?php
             if(isset($recipee->recipeID)) {
             ?>
-            <div><a href="bookmarkProcess.php?id=<?= $id ?>"><i class="fa-regular fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
+            <div><a href="/bookmarks/bookmarkProcess.php?id=<?= $id ?>"><i class="fa-regular fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
             <div class="message"></div>
             <?php } else {  ?>
-                <div><a href="bookmarkProcess.php?id=<?= $id ?>"><i class="fa-solid fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
+                <div><a href="/bookmarks/bookmarkProcess.php?id=<?= $id ?>"><i class="fa-solid fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
                 <div class="message"></div>
              <?php } ?>
         </div>
@@ -89,8 +89,8 @@ $rep= new BookmarkRepository('bookmarks');
 if(isset($_SESSION['name'])){
     if($_SESSION['name'] === $recipe->author){ ?>
         <div class="buttons">
-        <button class="button"><a href="update.php?id=<?= $recipe->id;?>">Update</a></button>
-        <button class="delete button"><a href="deleteRecipesProcess.php?id=<?= $recipe->id;?>">Delete</a></button>
+        <button class="button"><a href="/recipes_crud/updateRecipe.php?id=<?= $recipe->id;?>">Update</a></button>
+        <button class="delete button"><a href="/recipes_crud/deleteRecipesProcess.php?id=<?= $recipe->id;?>">Delete</a></button>
         </div>
             <?php
     }
@@ -98,7 +98,7 @@ if(isset($_SESSION['name'])){
 ?>
 
 <?php
-include 'comments.php';
+include 'comments/comments.php';
 ?>
 
 <?php

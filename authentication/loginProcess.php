@@ -1,6 +1,6 @@
 <?php
-
-include_once 'UserRepository.php';
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+include_once 'database_access/UserRepository.php';
 session_start();
 
 $email = $_POST["email"];
@@ -14,13 +14,13 @@ if(isset($user)) {
         $_SESSION["user"] = $email;
         $_SESSION["name"] = $user->name;
         $isAuthenticated = true;
-        header("location:index.php");
+        header("location: /index.php");
     }
 }
 
 if(!$isAuthenticated){
     $_SESSION["erreur"] = 'Wrong credentials! Try again.';
-    header('location:login.php');
+    header('location: /authentication/login.php');
 
 }
 ?>

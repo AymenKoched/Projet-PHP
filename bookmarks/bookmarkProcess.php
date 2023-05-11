@@ -1,5 +1,6 @@
 <?php
-    include_once 'BookmarkRepository.php';
+    set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+    include_once 'database_access/BookmarkRepository.php';
     session_start();
     $email = $_SESSION["user"];
     $id = $_GET["id"];
@@ -10,5 +11,5 @@
     } else {
         $rep->Create(['userEmail' => $email,'recipeID'=>$id]);
     }
-    header("location:details.php?id=$id");
+    header("location:/details.php?id=$id");
 ?>

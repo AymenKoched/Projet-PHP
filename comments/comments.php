@@ -1,5 +1,7 @@
 <div class="comment_container">
-    <?php include_once ("CommentRepository.php");
+    <?php
+    set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+    include_once ("database_access/CommentRepository.php");
     $rep = new CommentRepository("comment");
     ?>
 
@@ -10,7 +12,7 @@
          <?php } ?>
 
     <?php
-    include_once ("CommentRepository.php");
+    include_once ("database_access/CommentRepository.php");
     $rep = new CommentRepository("comment");
     $comments = $rep->findByRecipeId($recipe->id);
     foreach($comments as $comment){
@@ -53,7 +55,7 @@
                 <?php
                 if (isset($_SESSION["name"])) {
                     if ($_SESSION["name"] == $comment->author) { ?>
-                        <a href="DeleteCommnetprocess.php?comment_id=<?php echo $comment->id?>"><img src="Delete_icon.ico" width="20px" height="20px"></a>
+                        <a href="/comments/DeleteCommnetprocess.php?comment_id=<?php echo $comment->id?>"><img src="/assets/delete_icon.ico" width="20px" height="20px"></a>
                 <?php
                     }
                 }
@@ -68,9 +70,9 @@
 
                     if ($liked) {
                 ?>
-                <a class="liked"  data-comment-id="<?php echo $comment->id ?>"><img src="heartLike.ico" width="20px" height="20px"></a>
+                <a class="liked"  data-comment-id="<?php echo $comment->id ?>"><img src="/assets/heart_like.ico" width="20px" height="20px"></a>
                 <?php } else { ?>
-                <a class="unliked"  data-comment-id="<?php echo $comment->id ?>"><img src="heart%20empty.ico" width="20px" height="20px"></a>
+                <a class="unliked"  data-comment-id="<?php echo $comment->id ?>"><img src="/assets/heart_empty.ico" width="20px" height="20px"></a>
                 <?php } }?>
             </div>
             </div>
@@ -84,7 +86,7 @@
 if(isset($_SESSION["name"]))
 {
 ?>
-<form action="addCommentProcess.php" method="post" enctype="multipart/form-data">
+<form action="/comments/addCommentProcess.php" method="post" enctype="multipart/form-data">
     <h2>Add Comment</h2>
 
     <label for="title">Text</label>
@@ -100,7 +102,7 @@ if(isset($_SESSION["name"]))
 }
 ?>
 
-<<script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
         $('.liked, .unliked').click(function(){
             var commentId = $(this).data('comment-id');
@@ -108,17 +110,17 @@ if(isset($_SESSION["name"]))
             var clickedElement = $(this);
             $.ajax({
                 type: 'POST',
-                url: 'LikeProcess.php',
+                url: '/comments/LikeProcess.php',
                 data: { comment_id: commentId, is_liked: isLiked },
                 success: function(data){
                     var updatedLikes = parseInt(data.likes);
                     $('#nbr_likes_' + commentId).text('Likes ' + updatedLikes);
                     if (isLiked) {
                         clickedElement.removeClass('liked').addClass('unliked');
-                        clickedElement.html('<img src="heart%20empty.ico" width="20px" height="20px">');
+                        clickedElement.html('<img src="/assets/heart_empty.ico" width="20px" height="20px">');
                     } else {
                         clickedElement.removeClass('unliked').addClass('liked');
-                        clickedElement.html('<img src="heartLike.ico" width="20px" height="20px">');
+                        clickedElement.html('<img src="/assets/heart_like.ico" width="20px" height="20px">');
                     }
 
                 }

@@ -1,4 +1,5 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 $pageTitle = 'Recipes | Login';
 include 'requireGuest.php';
 include_once 'fragments/header.php';
