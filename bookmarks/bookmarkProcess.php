@@ -4,7 +4,7 @@
     session_start();
     $email = $_SESSION["user"];
     $id = $_GET["id"];
-    $rep= new BookmarkRepository('bookmarks');
+    $rep= new BookmarkRepository();
     $recipe = $rep->findByRecipeAndUser($email,$id);
     if(isset($recipe->recipeID)) {
         $rep->DeleteByRecipeIDAndEmail($email,$id);

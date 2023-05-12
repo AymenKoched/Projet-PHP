@@ -2,10 +2,10 @@
 set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 require_once 'database_access/RecipesRepository.php';
 require_once 'database_access/BookmarkRepository.php';
-$rep = new RecipesRepository('recipes');
+$rep = new RecipesRepository();
 $pageTitle = 'Recipes | Recipe';
 include 'fragments/header.php';
-$req= new BookmarkRepository("bookmarks");
+$req= new BookmarkRepository();
 $recipeNameWanted = isset($_GET['search']) ? $_GET['search'] : '';
 if ($recipeNameWanted) {
     $recipes = $rep->searchByName($recipeNameWanted);

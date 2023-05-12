@@ -3,9 +3,9 @@ require_once 'Repository.php';
 
 class RecipesRepository extends Repository
 {
-    public function __construct($tableName)
+    public function __construct($tableName = 'recipe')
     {
-            parent::__construct('recipes');
+            parent::__construct($tableName);
     }
     public function findByNom($name){
         $requete = "select * from $this->tableName where nom = ? ";

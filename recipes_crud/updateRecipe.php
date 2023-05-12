@@ -6,7 +6,7 @@ include 'fragments/header.php';
 $id = htmlentities($_GET['id']);
 
 require_once ('database_access/RecipesRepository.php');
-$rep= new RecipesRepository("recipes");
+$rep= new RecipesRepository();
 $recipe = $rep->findById($id);
 $image = $recipe->image;
 $DataUri='data:image/jpeg;base64,' . base64_encode($image)

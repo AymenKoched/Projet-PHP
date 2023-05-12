@@ -5,7 +5,7 @@ include_once 'database_access/BookmarkRepository.php';
 $id = htmlentities($_GET['id']);
 
 require_once ('database_access/RecipesRepository.php');
-$rep= new RecipesRepository("recipes");
+$rep= new RecipesRepository();
 $recipe = $rep->findById($id);
 
 $image=$recipe->image;
@@ -18,7 +18,7 @@ $rep->UpdateVisitsByOne($visits->visits,$id);
 
 
 
-$rep= new BookmarkRepository('bookmarks');
+$rep= new BookmarkRepository();
 ?>
 
 <div class="details">

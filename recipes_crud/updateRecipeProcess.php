@@ -37,7 +37,7 @@ if(file_exists($tmp_upload_path)
 }
 
 require_once ('database_access/RecipesRepository.php');
-$rep= new RecipesRepository("recipes");
+$rep= new RecipesRepository();
 $recipe = $rep->UpdateById($id,$params);
 
 header("Location: /index.php");

@@ -6,7 +6,7 @@ require_once 'database_access/BookmarkRepository.php';
 require_once 'database_access/RecipesRepository.php';
 $email = $_SESSION['user'];
 
-$req= new BookmarkRepository("bookmarks");
+$req= new BookmarkRepository();
 $recipesIDs = $req->findRecipeByEmail($email);
 
 if (!$recipesIDs) { ?>
@@ -14,7 +14,7 @@ if (!$recipesIDs) { ?>
    <?php } else { ?>
     <ul class="plats">
         <?php foreach ($recipesIDs as $recipesID) {
-            $req1= new RecipesRepository("recipes");
+            $req1= new RecipesRepository();
             $recipe = $req1->findById($recipesID->recipeID);
             ?>
         <div class="plat">

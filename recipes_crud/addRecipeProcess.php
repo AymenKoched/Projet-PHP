@@ -22,7 +22,7 @@ if($upload->isImage()){
 
     $upload->compressImageIfPossible();
 
-    $query = "INSERT INTO recipes (nom, author, image, ingrediants, etapes, cooktime, categorie)
+    $query = "INSERT INTO recipe (nom, author, image, ingrediants, etapes, cooktime, categorie)
               VALUES (:nom, :author, :image, :ingrediant, :etape, :cooktime, :categorie)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
     $statement->bindParam(':nom', $nom);

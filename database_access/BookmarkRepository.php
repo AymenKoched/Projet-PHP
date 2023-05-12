@@ -2,9 +2,9 @@
 require_once 'Repository.php';
 class BookmarkRepository extends Repository
 {
-    public function __construct($tableName)
+    public function __construct($tableName = 'bookmark')
     {
-        parent::__construct('bookmarks');
+        parent::__construct($tableName);
     }
     public function findByRecipeAndUser($email,$id){
         $requete = "select recipeID from $this->tableName where userEmail = ? and  recipeID = ? ";

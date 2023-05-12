@@ -4,8 +4,8 @@ include 'fragments/header.php';
 
 require_once 'database_access/RecipesRepository.php';
 require_once 'database_access/BookmarkRepository.php';
-$rep = new RecipesRepository('recipes');
-$bookm = new BookmarkRepository("bookmarks");
+$rep = new RecipesRepository();
+$bookm = new BookmarkRepository();
 ?>
 
 <h5 class="dishes">Dishes</h5>
