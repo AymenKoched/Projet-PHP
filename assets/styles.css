@@ -172,7 +172,7 @@ footer{
   width: 30%;
   text-align: right;
 }
-.details .etapes{
+.details .steps{
 list-style-type: decimal;
 }
 
@@ -183,7 +183,7 @@ list-style-type: decimal;
 .details  .how {
   margin-bottom: 25px;
 }
-.details  .etapes li{
+.details  .steps li{
   text-align: center;
   width: fit-content;
   margin-inline: auto;

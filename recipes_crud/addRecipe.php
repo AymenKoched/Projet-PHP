@@ -10,7 +10,7 @@ include 'authentication/requireAuthenticated.php';
     <h2>Add Recipe</h2>
 
     <label for="title">Recipe Name</label>
-    <input type="text" name="nom" id="title" maxlength="64" required />
+    <input type="text" name="name" id="title" maxlength="64" required />
 
     <label for="author">Author</label>
     <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
@@ -18,8 +18,8 @@ include 'authentication/requireAuthenticated.php';
     <label for="ingredients">Ingredients (separated with new lines)</label>
     <textarea id="ingredients" name="ingredients" rows="10"></textarea>
 
-    <label for="etapes">Steps (separated with new lines)</label>
-    <textarea id="etapes" name="etapes" rows="10"></textarea>
+    <label for="steps">Steps (separated with new lines)</label>
+    <textarea id="steps" name="steps" rows="10"></textarea>
 
     <label for="cooktime">Cooking time (minutes)</label>
     <input type="number" name="cooktime" id="cooktime" min="2" max="360" required>
@@ -27,8 +27,8 @@ include 'authentication/requireAuthenticated.php';
     <label for="image">Image</label>
     <input id="image" type="file" name="my_image" accept="image/*" required>
 
-    <label for="categories">Region (optional)</label>
-    <select id="categories" name="categories" required>
+    <label for="region">Region (optional)</label>
+    <select id="region" name="region" required>
         <option selected disabled>Open this select menu</option>
         <option value="Béja">Béja</option>
         <option value="Ben Arous">Ben Arous</option>

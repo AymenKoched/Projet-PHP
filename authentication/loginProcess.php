@@ -10,7 +10,7 @@ $userRepository= new UserRepository('user');
 $user = $userRepository->findByEmail($email);
 
 if(isset($user)) {
-    if (password_verify($password, $user->pwd)) {
+    if (password_verify($password, $user->password)) {
         $_SESSION["user"] = $email;
         $_SESSION["name"] = $user->name;
         $isAuthenticated = true;

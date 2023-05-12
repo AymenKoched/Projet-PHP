@@ -49,7 +49,7 @@
 
 
                 <!--Comment Likes-->
-                <div id="nbr_likes_<?php echo $comment->id ?>">Likes <?php echo $comment->Likes ?></div>
+                <div id="nbr_likes_<?php echo $comment->id ?>">Likes <?php echo $comment->likes ?></div>
 
                 <!--Delete Comment-->
                 <?php
@@ -95,8 +95,8 @@ if(isset($_SESSION["name"]))
     <button type="submit">Add</button>
 
     <input hidden="hidden" name="author" type="text"  value="<?=$_SESSION["name"]?>" >
-    <input hidden="hidden" name="RecipeId" type="number"  value="<?=$recipe->id?>" >
-    <input hidden="hidden" name="Likes" type="number"  value=0 >
+    <input hidden="hidden" name="recipeId" type="number"  value="<?=$recipe->id?>" >
+    <input hidden="hidden" name="likes" type="number"  value=0 >
 </form>
 <?php
 }
@@ -114,7 +114,7 @@ if(isset($_SESSION["name"]))
                 data: { comment_id: commentId, is_liked: isLiked },
                 success: function(data){
                     var updatedLikes = parseInt(data.likes);
-                    $('#nbr_likes_' + commentId).text('Likes ' + updatedLikes);
+                    $('#nbr_likes_' + commentId).text('likes ' + updatedLikes);
                     if (isLiked) {
                         clickedElement.removeClass('liked').addClass('unliked');
                         clickedElement.html('<img src="/assets/heart_empty.ico" width="20px" height="20px">');

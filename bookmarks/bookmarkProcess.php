@@ -6,10 +6,10 @@
     $id = $_GET["id"];
     $rep= new BookmarkRepository();
     $recipe = $rep->findByRecipeAndUser($email,$id);
-    if(isset($recipe->recipeID)) {
+    if(isset($recipe->recipeId)) {
         $rep->DeleteByRecipeIDAndEmail($email,$id);
     } else {
-        $rep->Create(['userEmail' => $email,'recipeID'=>$id]);
+        $rep->Create(['userEmail' => $email,'recipeId'=>$id]);
     }
     header("location:/details.php?id=$id");
 ?>

@@ -15,14 +15,14 @@ if (!$recipesIDs) { ?>
     <ul class="plats">
         <?php foreach ($recipesIDs as $recipesID) {
             $req1= new RecipesRepository();
-            $recipe = $req1->findById($recipesID->recipeID);
+            $recipe = $req1->findById($recipesID->recipeId);
             ?>
         <div class="plat">
             <div class="plat-img">
                 <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" alt="recipe img">
             </div>
         <div class="plat-info">
-            <p class="plat-name"><strong><?= strtoupper($recipe->nom); ?> </strong></p>
+            <p class="plat-name"><strong><?= strtoupper($recipe->name); ?> </strong></p>
             <p class="plat-author"><strong>Author</strong> : <?= $recipe->author; ?> </p>
             <p class="plat-admiration"><strong>Bookmarks </strong> : <?php if ($req->findBookmarksByRecipeId($recipe->id)) {
                     echo($req->findBookmarksByRecipeId($recipe->id)); }
@@ -33,7 +33,7 @@ if (!$recipesIDs) { ?>
             <p class="plat-visitors"><strong>Visits Overall</strong> :
                 <?= $recipe->visits ?>
             </p>
-            <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
+            <p class="plat-region"><strong>Region : </strong><?= $recipe->region ?></p>
             <div class="plat-details">
                 <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
             </div>

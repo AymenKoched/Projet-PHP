@@ -15,7 +15,7 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <h2>Update Recipe</h2>
 
     <label for="title">Recipe Name</label>
-    <input type="text" name="nom" id="title" value="<?=$recipe->nom?>" maxlength="64" required />
+    <input type="text" name="name" id="title" value="<?=$recipe->name?>" maxlength="64" required />
 
     <label for="author">Author</label>
     <input type="text" name="author" id="author" value="<?=$recipe->author?>" readonly required />
@@ -23,8 +23,8 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <label for="ingredients">Ingredients (separated with new lines)</label>
     <textarea id="ingredients" name="ingrediants" rows="10"><?=$recipe->ingrediants?></textarea>
 
-    <label for="etapes">Steps (separated with new lines)</label>
-    <textarea id="etapes" name="etapes" rows="10"><?=$recipe->etapes?></textarea>
+    <label for="steps">Steps (separated with new lines)</label>
+    <textarea id="steps" name="steps" rows="10"><?=$recipe->steps?></textarea>
 
     <label for="cooktime">Cooking time (minutes)</label>
     <input type="number" name="cooktime" id="cooktime" value="<?=$recipe->cooktime?>" min="2" max="360" required>
@@ -33,9 +33,9 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
     <input id="image-upload" type="file" name="my_image" accept="image/*">
 
-    <label for="categories">Region (optional)</label>
-    <select id="categories" name="categories">
-        <option selected><?=$recipe->categorie?></option>
+    <label for="region">Region (optional)</label>
+    <select id="region" name="region">
+        <option selected><?=$recipe->region?></option>
         <option value="Nabeul">Nabeul</option>
         <option value="Touzeur">Touzeur</option>
         <option value="Manubah">Manubah</option>

@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include_once("database_access/CommentRepository.php");
     $rep = new CommentRepository("comment");
     $comment = $rep->findById($commentId);
-    $likedBy = $comment->Likers ? explode(',', $comment->Likers) : [];
-    $likes = $comment->Likes;
+    $likedBy = $comment->likers ? explode(',', $comment->likers) : [];
+    $likes = $comment->likes;
     if (!in_array($userId, $likedBy)) {
         $likedBy[] = $userId;
         $likes++;
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $likes--;
     }
 
-    $params = ['Likes' => $likes, 'Likers' => implode(',', $likedBy)];
+    $params = ['likes' => $likes, 'likers' => implode(',', $likedBy)];
     $rep->UpdateById($commentId, $params);
 
     // Prepare the response

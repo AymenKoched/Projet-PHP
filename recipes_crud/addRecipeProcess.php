@@ -7,32 +7,32 @@ require_once('UploadedFile.php');
 $upload = new UploadedFile($_FILES["my_image"]["tmp_name"]);
 
 if($upload->isImage()){
-    $nom = $_POST['nom'];
+    $name = $_POST['name'];
     $author = $_POST['author'];
     $ingrediant = $_POST['ingredients'];
-    $etape = $_POST['etapes'];
+    $steps = $_POST['steps'];
     $cooktime = $_POST['cooktime'];
 
-    if (!empty($_POST['categories'])) {
-        $categorie = $_POST['categories'];
+    if (!empty($_POST['region'])) {
+        $region = $_POST['region'];
         // continue with your SQL query
     } else {
-        $categories = "pas de categorie ";
+        $region = "All of Tunisia";
     }
 
     $upload->compressImageIfPossible();
 
-    $query = "INSERT INTO recipe (nom, author, image, ingrediants, etapes, cooktime, categorie)
-              VALUES (:nom, :author, :image, :ingrediant, :etape, :cooktime, :categorie)";
+    $query = "INSERT INTO recipe (name, author, image, ingrediants, steps, cooktime, region)
+              VALUES (:name, :author, :image, :ingrediant, :steps, :cooktime, :region)";
     $statement = ConnexionPDO::getInstance()->prepare($query);
-    $statement->bindParam(':nom', $nom);
+    $statement->bindParam(':name', $name);
     $statement->bindParam(':author', $author);
     $image_blob = file_get_contents($upload->path);
     $statement->bindParam(':image', $image_blob);
     $statement->bindParam(':ingrediant', $ingrediant);
-    $statement->bindParam(':etape', $etape);
+    $statement->bindParam(':steps', $steps);
     $statement->bindParam(':cooktime', $cooktime);
-    $statement->bindParam(':categorie', $categorie);
+    $statement->bindParam(':region', $region);
     $statement->execute();
     header("Location: /index.php");
 

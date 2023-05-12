@@ -4,20 +4,20 @@ session_start();
 require_once('UploadedFile.php');
 
 $id = htmlentities($_POST['id']);
-$nom = htmlentities($_POST['nom']);
+$name = htmlentities($_POST['name']);
 $author = htmlentities($_POST['author']);
 $ingrediants = htmlentities($_POST['ingrediants']);
-$etapes = htmlentities($_POST['etapes']);
+$steps = htmlentities($_POST['steps']);
 $cooktime = htmlentities($_POST['cooktime']);
-$categories = htmlentities($_POST['categories']);
+$region = htmlentities($_POST['region']);
 
 $params = array(
-    'nom' => $nom,
+    'name' => $name,
     'author' => $author,
     'ingrediants' => $ingrediants,
-    'etapes' => $etapes,
+    'steps' => $steps,
     'cooktime' => $cooktime,
-    'categorie' => $categories,
+    'region' => $region,
 );
 
 $tmp_upload_path = $_FILES['my_image']['tmp_name'];

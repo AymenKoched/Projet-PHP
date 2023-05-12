@@ -10,11 +10,11 @@ $bookm = new BookmarkRepository();
 
 <h5 class="dishes">Dishes</h5>
 <?php
-if(isset($_GET["categorie"])) { ?>
-    <h3 class="cat-below-title">Of <?=$_GET["categorie"] ?> </h3>
+if(isset($_GET["region"])) { ?>
+    <h3 class="cat-below-title">Of <?=$_GET["region"] ?> </h3>
 <?php } ?>
 
-<?php if(!isset($_GET["categorie"])) { ?>
+<?php if(!isset($_GET["region"])) { ?>
 <div class="orderby" ><div class="title">Tap to Order Recipes by:</div>
     <div class="order">
         <a href="index.php?tri=visit" class="see" >Visits</a>
@@ -38,8 +38,8 @@ if (isset($_GET["tri"]) && $_GET["tri"]== "visit") {
     $recipes = $bookm->findAllOderedByBookmarks();
     $isbookmark = true;
 }
-else if (isset($_GET['categorie']) && !empty($_GET['categorie'])) {
-    $recipes = $rep->findByCategory($_GET['categorie']);
+else if (isset($_GET['region']) && !empty($_GET['region'])) {
+    $recipes = $rep->findByRegion($_GET['region']);
 }
 else {
     $recipes = $rep->findAll();
@@ -60,7 +60,7 @@ if (!$recipes) { ?>
 
         foreach ($recipes as $recipe) {
             if ($isbookmark == true) {
-                $recipe = $rep->findById($recipe->recipeID);
+                $recipe = $rep->findById($recipe->recipeId);
             }
 
             $count++;
@@ -73,7 +73,7 @@ if (!$recipes) { ?>
                     <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" object-fit="cover"; alt="recipe img">
                 </div>
                 <div class="plat-info">
-                    <p class="plat-name"><strong><?= strtoupper($recipe->nom); ?> </strong></p>
+                    <p class="plat-name"><strong><?= strtoupper($recipe->name); ?> </strong></p>
                     <p class="plat-author"><strong>Author</strong> : <?= $recipe->author; ?> </p>
                     <p class="plat-admiration"><strong>Bookmarks </strong> : <?php if ($bookm->findBookmarksByRecipeId($recipe->id)) {
                         echo($bookm->findBookmarksByRecipeId($recipe->id)); }
@@ -84,7 +84,7 @@ if (!$recipes) { ?>
                     <p class="plat-visitors"><strong>Visits Overall</strong> :
                         <?= $recipe->visits ?>
                     </p>
-                    <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
+                    <p class="plat-region"><strong>Region : </strong><?= $recipe->region ?></p>
                     <div class="plat-details">
                         <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
                     </div>
@@ -97,7 +97,7 @@ if (!$recipes) { ?>
                         <img src="data:image/jpeg;base64,<?= base64_encode($recipe->image); ?>" height="300" width="300" alt="recipe img">
                     </div>
                     <div class="plat-info">
-                        <p class="plat-name"><strong><?= strtoupper($recipe->nom); ?> </strong></p>
+                        <p class="plat-name"><strong><?= strtoupper($recipe->name); ?> </strong></p>
                         <p class="plat-author"><strong>Author</strong> : <?= $recipe->author; ?> </p>
                         <p class="plat-admiration"><strong>Bookmarks </strong> : <?php if ($bookm->findBookmarksByRecipeId($recipe->id)) {
                             echo($bookm->findBookmarksByRecipeId($recipe->id)); }
@@ -108,7 +108,7 @@ if (!$recipes) { ?>
                         <p class="plat-visitors"><strong>Visits Overall</strong> :
                         <?= $recipe->visits ?>
                         </p>
-                        <p class="plat-region"><strong>Region : </strong><?= $recipe->categorie ?></p>
+                        <p class="plat-region"><strong>Region : </strong><?= $recipe->region ?></p>
                         <div class="plat-details">
                         <a href="/details.php?id=<?= $recipe->id; ?>" class="see" style="font-weight: 600">See Details</a>
                         </div>

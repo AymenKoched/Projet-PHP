@@ -26,7 +26,7 @@ $rep= new BookmarkRepository();
         <img src="<?=$dataUri?>" alt="recipe img">
     </div>
 
-    <h2 class="recName"><?= strtoupper($recipe->nom) ?></h2>
+    <h2 class="recName"><?= strtoupper($recipe->name) ?></h2>
     <div class="flex">
 
         <?php if(!isset($_SESSION["user"])) { ?>
@@ -47,7 +47,7 @@ $rep= new BookmarkRepository();
             $recipee = $rep->findByRecipeAndUser($email,$id); ?>
         <div class="bkmark">
             <?php
-            if(isset($recipee->recipeID)) {
+            if(isset($recipee->recipeId)) {
             ?>
             <div><a href="/bookmarks/bookmarkProcess.php?id=<?= $id ?>"><i class="fa-regular fa-bookmark bkm" style="color: #ffffff;"></i></a></div>
             <div class="message"></div>
@@ -72,19 +72,19 @@ $rep= new BookmarkRepository();
         <?php }} ?>
     </ul>
     <h5 class="how">HOW TO COOK IT</h5>
-    <ul class="etapes">
+    <ul class="steps">
         <?php
-        $etapes = preg_split('/\r\n|\r|\n/', $recipe->etapes);
-        $etapes = array_map('trim', $etapes);
-        foreach ($etapes as $etape){
-            if ($etape !="" ) { ?>
-             <li><?= $etape ?></li>
+        $steps = preg_split('/\r\n|\r|\n/', $recipe->steps);
+        $steps = array_map('trim', $steps);
+        foreach ($steps as $step){
+            if ($step !="" ) { ?>
+             <li><?= $step ?></li>
         <?php }} ?>
     </ul>
    
    <?php
-	if (isset($recipe->categorie))
-            echo   '<h5 style="text-align: center; margin-top: 120px ; font-size: 25px"><span style="color: rgb(255, 105, 84);">Region :</span>'.$recipe->categorie.'</h5>';
+	if (isset($recipe->region))
+            echo   '<h5 style="text-align: center; margin-top: 120px ; font-size: 25px"><span style="color: rgb(255, 105, 84);">Region :</span>'.$recipe->region.'</h5>';
    ?>
     <p style="text-align: center; margin-top: 50px ; font-size: 28px"  >By <?= $recipe->author?></p>
 </div>

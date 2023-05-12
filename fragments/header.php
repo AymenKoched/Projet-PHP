@@ -28,7 +28,7 @@ session_start();
         <li>Welcome, <?= $_SESSION["name"] ?></li>
         <?php } ?>
         <li><a href="/recipes_crud/addRecipe.php">Add a Recipe</a></li>
-        <li><a href="/search/category.php">Search By Region</a></li>
+        <li><a href="/search/region.php">Search By Region</a></li>
 
         <li><a href="/about.php">About</a></li>
         <?php  if(isset($_SESSION["user"])) {?>
