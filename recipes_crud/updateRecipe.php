@@ -18,7 +18,7 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <input type="text" name="nom" id="title" value="<?=$recipe->nom?>" required />
 
     <label for="author">Author</label>
-    <input type="text" name="author" id="author" value="<?=$recipe->author?>" required />
+    <input type="text" name="author" id="author" value="<?=$recipe->author?>" readonly required />
 
     <label for="ingredients">Ingredients (separated with new lines)</label>
     <textarea id="ingredients" name="ingrediants" rows="10"><?=$recipe->ingrediants?></textarea>
@@ -27,13 +27,13 @@ $DataUri='data:image/jpeg;base64,' . base64_encode($image)
     <textarea id="etapes" name="etapes" rows="10"><?=$recipe->etapes?></textarea>
 
     <label for="cooktime">Cooking time (minutes)</label>
-    <input type="number" name="cooktime" id="cooktime" required>
+    <input type="number" name="cooktime" id="cooktime" value="<?=$recipe->cooktime?>" required>
 
     <label for="image">Image</label>
     <img src="<?= $DataUri ?>" height="100" width="100" alt="recipe image">
     <input id="image-upload" type="file" name="my_image" accept="image/*">
 
-    <label for="categories">Region</label>
+    <label for="categories">Region (optional)</label>
     <select id="categories" name="categories">
         <option selected><?=$recipe->categorie?></option>
         <option value="Nabeul">Nabeul</option>
