@@ -10,7 +10,7 @@ include 'authentication/requireAuthenticated.php';
     <h2>Add Recipe</h2>
 
     <label for="title">Recipe Name</label>
-    <input type="text" name="nom" id="title" required />
+    <input type="text" name="nom" id="title" maxlength="64" required />
 
     <label for="author">Author</label>
     <input type="text" name="author" id="author" readonly required value="<?= $_SESSION["name"] ?>"/>
@@ -22,7 +22,7 @@ include 'authentication/requireAuthenticated.php';
     <textarea id="etapes" name="etapes" rows="10"></textarea>
 
     <label for="cooktime">Cooking time (minutes)</label>
-    <input type="number" name="cooktime" id="cooktime" required>
+    <input type="number" name="cooktime" id="cooktime" min="2" max="360" required>
 
     <label for="image">Image</label>
     <input id="image" type="file" name="my_image" accept="image/*" required>
